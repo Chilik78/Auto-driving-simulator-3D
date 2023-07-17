@@ -8,14 +8,14 @@ import dotenv
 dotenv.load_dotenv()
 
 class TrafficSimulator(object):
-    def __init__(self, NetworkName, delay):
+    def __init__(self, NetworkName, step_length):
 
         self.NetworkName = NetworkName #Название симуляции
-        self.StartSumo(delay) #Запуск старта симуляции
+        self.StartSumo(step_length) #Запуск старта симуляции
         self.ParseNetwork() #Парсинг симуляции
 
     #Запускает сумо
-    def StartSumo(self, delay):
+    def StartSumo(self, step_length):
         
         #Получает папку с СУМО
         if 'SUMO_HOME' in os.environ:
@@ -30,7 +30,7 @@ class TrafficSimulator(object):
         FolderPath = "../SUMO_Networks/"
         #Команда для запуска
         sumoCmd = [sumoBinary, "-c",
-                   FolderPath + self.NetworkName, "--start", "--step-length", str(0.1), "--quit-on-end", "-d", str(delay)]
+                   FolderPath + self.NetworkName, "--start", "--quit-on-end", "--step-length", str(step_length)]
         
         #Сам запуск
         traci.start(sumoCmd)
@@ -97,7 +97,6 @@ class TrafficSimulator(object):
         #Пройтись по всем сигнальным перекресткам
         for ID in self.LightIDs:
             LightLaneList = traci.trafficlight.getControlledLanes(ID)
-
             #Прокручиваем все сигнальные головки на перекрестке
             idx = 0
             for Lane in LightLaneList:
@@ -113,11 +112,11 @@ class TrafficSimulator(object):
                 TrafficLights.append(TrafficLightObject)
 
                 idx = idx + 1
-      
+
         return TrafficLights
 
     def UpdateSignalPhases(self, TrafficLights):
-        
+
         i = 0
         #Проходим через каждый сигнальный перекресток
         for ID in self.LightIDs:

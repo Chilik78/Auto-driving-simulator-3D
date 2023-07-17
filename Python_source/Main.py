@@ -7,19 +7,18 @@ import os, dotenv
 
 #Класс, соединяющий симуляцию и сервер
 class SumoUnity(object):
-    def __init__(self, IP, Port, SumoNetwork, delay):
+    def __init__(self, IP, Port, SumoNetwork, step_length):
         
         self.NetworkName = SumoNetwork #Название симуляции
-        self.delay = delay #Задержка
         
         #Определяем очереди для связи
         self.UnityQueue = Queue(maxsize=2)
 
         #Запуск СУМО
-        self.TrafficSim = TrafficSimulator.TrafficSimulator(self.NetworkName, self.delay)
+        self.TrafficSim = TrafficSimulator.TrafficSimulator(self.NetworkName, step_length)
         self.TrafficLights = self.TrafficSim.ParseTrafficLights()
         self.SumoObjects = []
-
+        
         #Запуск TCP-сервер
         self.ServerIP = IP
         self.ServerPort = Port
@@ -54,18 +53,17 @@ class SumoUnity(object):
                 time.sleep(deltaT-TiStamp2)
             
             
-
 if __name__ == '__main__':
     IP = 'localhost'
     port = 4042
+    step_length = 0.02
 
     #Имя открываемой сети, но по сути путь к конфигу
     dotenv.load_dotenv()
-    SumoNetwork = os.environ["Sim_Path"] 
-    delay = 1
+    SumoNetwork = os.environ["Sim_Dzer"] 
 
     #Инициалиазция симуляции
-    Simulation = SumoUnity(IP, port, SumoNetwork, delay)
+    Simulation = SumoUnity(IP, port, SumoNetwork, step_length)
 
     #Запуск активности
     Simulation.main()

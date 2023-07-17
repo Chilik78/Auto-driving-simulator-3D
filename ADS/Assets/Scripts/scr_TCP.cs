@@ -211,6 +211,7 @@ public class scr_TCP : MonoBehaviour
     void OnApplicationQuit()
     {
         Debug.Log("Выключаюсь");
-        clientReceiveThread.Abort();
+        if (clientReceiveThread != null)
+            clientReceiveThread.Abort();
     }
 }
