@@ -97,6 +97,7 @@
     <Compile Include="Assets\Scripts\RawDataHandle.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\scr_VehicleHandler.cs" />
+    <Compile Include="Assets\Scripts\MainCar\CameraController.cs" />
     <Compile Include="Assets\Scripts\MainCar\DTP.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
   </ItemGroup>
