@@ -8,8 +8,8 @@ public class scr_Main : MonoBehaviour
     [Header("Scripts gameobject")]
     public GameObject MyScripts;
 
-    [Header("Машина")]
-    public GameObject CarObject;
+    [Header("Типы объектов")]
+    public GameObject[] SumoObjects;
 
     [Header("Светофор")]
     public GameObject LightObject;
@@ -17,11 +17,14 @@ public class scr_Main : MonoBehaviour
     [Header("timer for motion vizualisation")]
     public float timer = 10.0f;
 
+    [Header("Одна модель для отладки")]
+    public GameObject allVeh;
+    public bool isDebug;
 
     private List<GameObject> carsUnity = new List<GameObject>(); //Все машины на карте
     private List<GameObject> lightsUnity = new List<GameObject>(); //Все светофоры на карте
-    public GameObject parentCars; //Папка для групировки
-    public GameObject parentLights; //Папка для групировки
+    private GameObject parentCars; //Папка для групировки
+    private GameObject parentLights; //Папка для групировки
 
     //Старт вызывается перед обновлением первого кадра
     void Start()
@@ -77,6 +80,7 @@ public class scr_Main : MonoBehaviour
         light.name = lightInfo.LaneID;
         lightsUnity.Add(light);
     }
+
     /// <summary>
     /// Создаёт все светофоры по списку информации
     /// </summary>
@@ -87,6 +91,7 @@ public class scr_Main : MonoBehaviour
             CreateLight(lightInfo);
         }
     }
+
     /// <summary>
     /// Функция создаёт все машины по списку информации
     /// </summary>
@@ -104,12 +109,13 @@ public class scr_Main : MonoBehaviour
     /// <param name="carInfo"></param>
     public void CreateCar(CarInfo carInfo)
     {
-        var car = Instantiate(CarObject, new Vector3(carInfo.posx, 0, carInfo.posy), CarObject.transform.rotation);
+        GameObject obj;
+        obj = isDebug ? allVeh : SumoObjects[carInfo.sizeclass];
+        var car = Instantiate(obj, new Vector3(carInfo.posx, 0, carInfo.posy), obj.transform.rotation);
         car.transform.SetParent(parentCars.transform, false);
         car.name = carInfo.vehid;
         carsUnity.Add(car);
     }
-
 
     /// <summary>
     /// Функция обновляет - добавляет и удаляет лишниее машины<br></br>
@@ -169,8 +175,12 @@ public class scr_Main : MonoBehaviour
             Vector3 ydir = new Vector3(0, 1, 0);    //y направление вращения
             rot = Quaternion.AngleAxis((carInfo.heading), ydir);
             car.transform.SetPositionAndRotation(tempPos, rot);  //Устанавливаем положение и поворот
-            car.GetComponent<scr_VehicleHandler>().CalculateSteering(carInfo.heading, carInfo.speed, timer);
-            car.GetComponent<scr_VehicleHandler>().BrakeLightSwitch(carInfo.brakestate);
+            var comp = car.GetComponent<scr_VehicleHandler>();
+            if (comp != null)
+            {
+                comp.CalculateSteering(carInfo.heading, carInfo.speed, timer);
+                comp.BrakeLightSwitch(carInfo.brakestate);
+            }
         }
         Debug.Log("Обновлены все позиции машин");
     }
