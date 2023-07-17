@@ -13,8 +13,7 @@ class SumoObject(object):
             self.Edge = traci.vehicle.getRoadID(self.ID) #Id дороги
             self.Length = traci.vehicle.getLength(self.ID) #Длина
             self.Width = traci.vehicle.getWidth(self.ID) #Ширина
-            self.__CalculateSizeClass() #Категория размера транспортного средства
-            
+
             if traci.vehicle.getSignals(self.ID) & 8 == 8: #Bitmask - 8 for brake light
                 self.StBrakePedal = True
             else:
@@ -26,6 +25,7 @@ class SumoObject(object):
             self.Velocity = traci.vehicle.getSpeed(self.ID) #Скорость
             self.Heading = traci.vehicle.getAngle(self.ID) #Угол
 
+            self.__CalculateSizeClass() #self.SizeClass
             self.__CalculateCenter() #self.PosX_Center, self.PosY_Center (center, meters)
 
         except:
@@ -84,13 +84,19 @@ class SumoObject(object):
     #Определяет категорию транспортного средства в зависимости от его размера
     def __CalculateSizeClass(self):
 
-        if self.Length < 1:
-            self.SizeClass = 1 #Пешеход (вокруг)
-        elif  self.Length < 4:
-            self.SizeClass = 11 #Маленькая машина
-        elif self.Length < 5:
-            self.SizeClass = 12 #Средняя машина
+        type = self.ObjType[:self.ObjType.index('_')]
+        
+        if type == 'bike':
+            self.SizeClass = 1 #Велик
+        elif type == 'motorcycle':
+            self.SizeClass = 2 #Моцик
+        elif type == 'veh':
+            self.SizeClass = 3 #Ауди Влада
+        elif type == 'bus': 
+            self.SizeClass = 4 #Автобус
+        elif type == 'truck':
+            self.SizeClass = 5 #Грузовик
         else:
-            self.SizeClass = 13 #Большая машина
+            self.SizeClass = 0 #Ничего или пешеход
 
 

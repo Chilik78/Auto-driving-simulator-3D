@@ -1,4 +1,4 @@
-using System.Globalization;
+﻿using System.Globalization;
 using System;
 
 namespace Main
@@ -59,7 +59,7 @@ namespace Main
                     speed = (float)Convert.ToDouble(a[3], new CultureInfo("en-US"));
                     heading = (float)Convert.ToDouble(a[4], new CultureInfo("en-US"));
                     brakelight = (float)Convert.ToDouble(a[5], new CultureInfo("en-US"));
-                    sizeclass = (int)Convert.ToDouble(a[6], new CultureInfo("en-US"));      //Не используется в этом проекте
+                    sizeclass = (int)Convert.ToDouble(a[6], new CultureInfo("en-US"));     
 
                     if (brakelight == 1)
                         brakestate = true;
