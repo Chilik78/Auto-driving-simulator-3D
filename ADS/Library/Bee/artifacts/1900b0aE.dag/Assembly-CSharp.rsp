@@ -357,6 +357,7 @@
 "Assets/Scripts/MainCar/DTP.cs"
 "Assets/Scripts/MainCar/Lights.cs"
 "Assets/Scripts/MainCar/MainCarController.cs"
+"Assets/Scripts/MainCar/MainCarSound.cs"
 "Assets/Scripts/RawDataHandle.cs"
 "Assets/Scripts/scr_Main.cs"
 "Assets/Scripts/scr_TCP.cs"
