@@ -33,7 +33,11 @@ class TrafficSimulator(object):
                    FolderPath + self.NetworkName, "--start", "--quit-on-end", "--step-length", str(step_length)]
         
         #Сам запуск
-        traci.start(sumoCmd)
+        traci.start(sumoCmd, port=4042)
+
+        traci.gui.trackVehicle("View #0", "veh0")
+        traci.gui.setZoom("View #0", 1200)
+        traci.vehicle.setSpeed("veh0", 0)
 
         print("Sumo is running")
 
