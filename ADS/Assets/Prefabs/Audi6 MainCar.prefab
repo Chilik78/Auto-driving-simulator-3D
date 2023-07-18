@@ -741,7 +741,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 963a9e71a4596cb41b8f922636779a9b, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 963a9e71a4596cb41b8f922636779a9b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -841,7 +841,7 @@ PrefabInstance:
       addedObject: {fileID: 7241359641214900457}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 963a9e71a4596cb41b8f922636779a9b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4122451335191391742}
+      addedObject: {fileID: -315736674140585102}
     - targetCorrespondingSourceObject: {fileID: 5233112405309087440, guid: 963a9e71a4596cb41b8f922636779a9b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 959567030510198220}
@@ -905,7 +905,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4122451335191391742
+--- !u!114 &-315736674140585102
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -914,20 +914,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 6321299821615889517}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c4e4389380f9a24b87633ce90d54808, type: 3}
+  m_Script: {fileID: 11500000, guid: e32aa8f4e51ee684bb96cf6a66df0467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axleInfos:
-  - leftWheel: {fileID: 8842734461430257810}
-    rightWheel: {fileID: 8746051637488063538}
-    motor: 1
-    steering: 1
-  - leftWheel: {fileID: 8555591293385901319}
-    rightWheel: {fileID: 7063745661696267775}
-    motor: 0
-    steering: 0
-  maxMotorTorque: 650
-  maxSteeringAngle: 45
+  Wheels:
+  - {fileID: 6738967116265623831}
+  - {fileID: 59812198129045945}
+  - {fileID: 4467394365897679548}
+  - {fileID: 3280633561841009257}
+  target: {fileID: 6697437717763450583}
+  steer_rat: 14.4
+  speedmultiplier: 0.1
+  steer_correction: 0
+  steeringDamping: 4
+  BrakeLight:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &6697437717763450583 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 963a9e71a4596cb41b8f922636779a9b, type: 3}

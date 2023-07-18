@@ -67,6 +67,7 @@ public class scr_Main : MonoBehaviour
         //Та же логика со светофорами
         if(lightsUnity.Count > 0) UpdateLights(lightsInfo);
         else CreateAllLights(lightsInfo);
+
     }
 
     /// <summary>

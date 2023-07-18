@@ -116,11 +116,17 @@ class TrafficSimulator(object):
         return TrafficLights
 
     def UpdateSignalPhases(self, TrafficLights):
+        
 
         i = 0
         #Проходим через каждый сигнальный перекресток
         for ID in self.LightIDs:
             LightPhases = traci.trafficlight.getRedYellowGreenState(ID) #string
+            
+            TLS = [tls for tls in TrafficLights if tls.ID == ID]
+
+            if len(TLS) < len(LightPhases):
+                LightPhases = LightPhases[:(len(TLS))]
 
             # Просматриваем строку, содержащую состояние каждого сигнального контроллера, и обновляем объекты светофора
             for State in LightPhases:

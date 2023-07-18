@@ -60,7 +60,7 @@ if __name__ == '__main__':
 
     #Имя открываемой сети, но по сути путь к конфигу
     dotenv.load_dotenv()
-    SumoNetwork = os.environ["Sim_Dzer"] 
+    SumoNetwork = os.environ["Sim_Path"] 
 
     #Инициалиазция симуляции
     Simulation = SumoUnity(IP, port, SumoNetwork, step_length)
