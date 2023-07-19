@@ -5,48 +5,68 @@ using UnityEngine;
 [System.Serializable]
 public class FrontBackLights// Класс, который хранит в себя левую и правую фары каждой пары
 {
+    [Header("Правая фара")]
     public Light rightHeadlight;// Правая фара
+    [Header("Левая фара")]
     public Light leftHeadlight;// Левая фара
 }
 
 [System.Serializable]
-public class TurnSignalLights// Класс, который хранит в себя левую и правую фары каждой пары
+public class TurnSignalLights// Класс, который хранит в себя левый и правый поворотники каждой пары
 {
-    public Light rightTurnSignalLight;// Правая фара
-    public Light leftTurnSignalLight;// Левая фара
+    [Header("Правый поворотник")]
+    public Light rightTurnSignalLight;// Правый поворотник
+    [Header("Левый поворотник")]
+    public Light leftTurnSignalLight;// Левый поворотник
 }
 
 [System.Serializable]
-public class BackLights// Класс, который хранит в себя левую и правую фары каждой пары
+public class BackLights// Класс, который хранит в себе левую и правую зпдние фары каждой пары
 {
+    [Header("Правая задняя фара")]
     public Light rightBackLight;// Правая задняя фара
+    [Header("Левая задняя фара")]
     public Light leftBackLight;// Левая задняя фара
 }
 
 [System.Serializable]
-public class SpecialBackLights// Класс, который хранит в себя левую и правую фары каждой пары
+public class SpecialBackLights// Класс, который хранит в себе левую и правую задней специальной фары каждой пары
 {
+    [Header("Правая задняя специальная фара (При сдаче назад)")]
     public Light rightSpecialBackLight;// Правая задняя фара
+    [Header("Левая задняя специальная фара (При сдаче назад)")]
     public Light leftSpecialBackLight;// Левая задняя фара
 }
 
 public class Lights : MonoBehaviour
 {
+    [Header("Кол-во пар фар")]
     public List<FrontBackLights> frontBackLights;// Лист пар фар
+    [Header("Кнопка включения/выключения фар")]
     public KeyCode keyHeadlights;// Кнопка, при нажатии на которую происходит включение/выключение фар
 
+    [Header("Кол-во пар задних фар")]
     public List<BackLights> backLights;// Лист пар задних фар
+    [Header("Максимальная яркость задних фар")]
     public float maxBrightness;// Максимальная яркость задних фар
+    [Header("Стандартная яркость задних фар")]
     public float defaultBrightness;// Стандартная яркость задних фар
-    public List<SpecialBackLights> specialBackLights;// Лист пар специальных задних фар
-    public float maxSpecialLightBrightness;// Максимальная яркость задних фар (при торможении)
-    public float defaultSpecailLightBrightness;// Стандартная яркость задних фар (при торможении)
 
+    [Header("Кол-во пар специальных задних фар")]
+    public List<SpecialBackLights> specialBackLights;// Лист пар специальных задних фар
+    [Header("Максимальная яркость задних фар (при сдачи назад)")]
+    public float maxSpecialLightBrightness;// Максимальная яркость специальных задних фар (при торможении)
+    [Header("Стандартная яркость специальных задних фар (при сдачи назад)")]
+    public float defaultSpecailLightBrightness;// Стандартная яркость специальных задних фар (при торможении)
+
+    [Header("Кол-во пар поворотников")]
     public List<TurnSignalLights> turnSignalLights;// Лист пар поворотников
+    [Header("Кнопка включения/выключения правого поворотника")]
     public KeyCode keyRightTurnSignal;// Кнопка, при нажатии на которую происходит включение/выключение правого поворотника
+    [Header("Кнопка включения/выключения левого поворотника")]
     public KeyCode keyLeftTurnSignal;// Кнопка, при нажатии на которую происходит включение/выключение левого поворотника
 
-    private bool isLightsOn = false;// Отслеживание состояния активности фар
+    private static bool isLightsOn = false;// Отслеживание состояния активности фар
 
     private bool isMovingBack = false;// Отслеживание езды машины назад
 
@@ -92,7 +112,7 @@ public class Lights : MonoBehaviour
         }
     }
 
-    public void OnLights()// Включение и выключение фар
+    private void OnLights()// Включение и выключение фар
     {
         isLightsOn = !isLightsOn;
 
@@ -103,7 +123,7 @@ public class Lights : MonoBehaviour
         }
     }
 
-    public void BreakTurnSignal()// Отключает все поворотники
+    private void BreakTurnSignal()// Отключает все поворотники
     {
         StopAllCoroutines();
         isStartCoroutine = false;
@@ -115,7 +135,7 @@ public class Lights : MonoBehaviour
         }
     }
 
-    IEnumerator FlashingTurnSignal()// Заставляет поворотники мигать
+    private IEnumerator FlashingTurnSignal()// Заставляет поворотники мигать
     {
         isStartCoroutine = true;
         yield return new WaitForSeconds(0.5f);
@@ -135,7 +155,7 @@ public class Lights : MonoBehaviour
         isStartCoroutine = false;
     }
 
-    public void BrightnessBackLights()// Настройка яркости задних фар в зависимости от движения
+    private void BrightnessBackLights()// Настройка яркости задних фар в зависимости от движения
     {
         if(MainCarController.GetSpeed() < 0 && isMovingBack)
         {
@@ -193,5 +213,10 @@ public class Lights : MonoBehaviour
                 twoBackLights.leftBackLight.intensity = defaultBrightness;
             }
         }
+    }
+
+    public static bool GetStatusLights()
+    {
+        return isLightsOn;
     }
 }
