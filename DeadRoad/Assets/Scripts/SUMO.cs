@@ -23,7 +23,7 @@ namespace Main
         /// <param name="port"></param>
         /// <param name="host"></param>
         /// <param name="step_length"></param>
-        public SUMO(int port, string SimPath, string host = "localhost", float step_length = 0.02f)
+        public SUMO(int port, string SimPath, float step_length = 0.02f, string host = "localhost")
         {
             string sumoBinary = System.Environment.GetEnvironmentVariable("SUMO_HOME") + @"\bin\sumo-gui";
             string FolderPath = @"Assets\SUMO_Networks\";

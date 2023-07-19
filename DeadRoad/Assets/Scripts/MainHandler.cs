@@ -8,8 +8,9 @@ public class MainHandler : MonoBehaviour
     [Header("Общая папка")]
     public GameObject MyScripts;
 
-    [Header("Путь к симуляции")]
+    [Header("Настройки симуляции")]
     public string SimPath;
+    public float SimLength;
 
     [Header("Настройка игрока")]
     public GameObject player;
@@ -46,7 +47,7 @@ public class MainHandler : MonoBehaviour
     {
         parentCars = new GameObject("Cars");
         parentLights = new GameObject("Lights");
-        sumo = new SUMO(4042, SimPath);
+        sumo = new SUMO(4042, SimPath, SimLength);
         sumo.StartSimulation(CarId, CarIds);
         if (player == null)
             player = GameObject.Find("player");
