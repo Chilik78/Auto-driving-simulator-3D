@@ -15,7 +15,7 @@ D:/VSTU/Auto-driving-simulator-3D/ADS
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-53630
+50703
 Successfully changed project path to: D:/VSTU/Auto-driving-simulator-3D/ADS
 D:/VSTU/Auto-driving-simulator-3D/ADS
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,11 +49,11 @@ D:/VSTU/Auto-driving-simulator-3D/ADS
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [31544] Host "[IP] 10.0.0.100 [Port] 0 [Flags] 2 [Guid] 573436357 [EditorId] 573436357 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HEA453S) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [9492] Host "[IP] 10.0.0.100 [Port] 0 [Flags] 2 [Guid] 917460540 [EditorId] 917460540 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HEA453S) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [31544] Host "[IP] 10.0.0.100 [Port] 0 [Flags] 2 [Guid] 573436357 [EditorId] 573436357 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HEA453S) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [9492] Host "[IP] 10.0.0.100 [Port] 0 [Flags] 2 [Guid] 917460540 [EditorId] 917460540 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HEA453S) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 4.11 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 4.30 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.4f1 (35713cd46cd7)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/Resources/UnitySubsystems
@@ -69,44 +69,44 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56184
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56996
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007241 seconds.
-- Loaded All Assemblies, in  0.244 seconds
+Registered in 0.007212 seconds.
+- Loaded All Assemblies, in  0.229 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.202 seconds
-Domain Reload Profiling: 445ms
-	BeginReloadAssembly (68ms)
+- Finished resetting the current domain, in  0.188 seconds
+Domain Reload Profiling: 417ms
+	BeginReloadAssembly (61ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (0ms)
-	RebuildCommonClasses (25ms)
-	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (48ms)
-	LoadAllAssembliesAndSetupDomain (95ms)
-		LoadAssemblies (66ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (46ms)
+	LoadAllAssembliesAndSetupDomain (89ms)
+		LoadAssemblies (60ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (90ms)
-			TypeCache.Refresh (90ms)
-				TypeCache.ScanAssembly (79ms)
+		AnalyzeDomain (85ms)
+			TypeCache.Refresh (84ms)
+				TypeCache.ScanAssembly (76ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (203ms)
+	FinalizeReload (189ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (158ms)
+		SetupLoadedEditorAssemblies (147ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (8ms)
-			SetLoadedEditorAssemblies (6ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (102ms)
-			ProcessInitializeOnLoadMethodAttributes (40ms)
+			ProcessInitializeOnLoadAttributes (99ms)
+			ProcessInitializeOnLoadMethodAttributes (34ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -116,51 +116,51 @@ Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\VSTU\Auto-driving-simulator-3D\ADS\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\VSTU\Auto-driving-simulator-3D\ADS\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0.521 seconds
-Refreshing native plugins compatible for Editor in 1.35 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.482 seconds
+Refreshing native plugins compatible for Editor in 1.25 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.374 seconds
-Domain Reload Profiling: 894ms
+- Finished resetting the current domain, in  0.342 seconds
+Domain Reload Profiling: 822ms
 	BeginReloadAssembly (98ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (18ms)
+		CreateAndSetChildDomain (17ms)
 	RebuildCommonClasses (23ms)
 	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (33ms)
-	LoadAllAssembliesAndSetupDomain (358ms)
-		LoadAssemblies (201ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (320ms)
+		LoadAssemblies (170ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (204ms)
-			TypeCache.Refresh (191ms)
-				TypeCache.ScanAssembly (182ms)
-			ScanForSourceGeneratedMonoScriptInfo (10ms)
+		AnalyzeDomain (193ms)
+			TypeCache.Refresh (181ms)
+				TypeCache.ScanAssembly (173ms)
+			ScanForSourceGeneratedMonoScriptInfo (9ms)
 			ResolveRequiredComponents (3ms)
-	FinalizeReload (375ms)
+	FinalizeReload (342ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (260ms)
+		SetupLoadedEditorAssemblies (243ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (5ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (45ms)
-			ProcessInitializeOnLoadAttributes (187ms)
+			BeforeProcessingInitializeOnLoad (44ms)
+			ProcessInitializeOnLoadAttributes (172ms)
 			ProcessInitializeOnLoadMethodAttributes (14ms)
 			AfterProcessingInitializeOnLoad (6ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (5ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
 Refreshing native plugins compatible for Editor in 1.48 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3121 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 31 unused Assets / (56.3 KB). Loaded Objects now: 3585.
-Memory consumption went from 123.4 MB to 123.3 MB.
-Total: 3.012200 ms (FindLiveObjects: 0.201900 ms CreateObjectMapping: 0.138700 ms MarkObjects: 2.582400 ms  DeleteObjects: 0.088300 ms)
+Unloading 31 unused Assets / (56.6 KB). Loaded Objects now: 3585.
+Memory consumption went from 123.5 MB to 123.5 MB.
+Total: 2.685700 ms (FindLiveObjects: 0.211600 ms CreateObjectMapping: 0.139700 ms MarkObjects: 2.251500 ms  DeleteObjects: 0.082300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -176,38 +176,192 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 30740.629273 seconds.
-  path: Assets/Ð¡Ñ‚Ð¾Ð¿.png
-  artifactKey: Guid(d988752becf53554cb5e4f70754df47a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Ð¡Ñ‚Ð¾Ð¿.png using Guid(d988752becf53554cb5e4f70754df47a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bd82d17246d9ba4a40614335a4574b7') in 0.043709 seconds
+  Time since last request: 1816.635849 seconds.
+  path: Assets/Models/ÐŸÐµÑˆÐµÑ…Ð¾Ð´Ð½Ñ‹Ð¹ Ð¿ÐµÑ€ÐµÑ…Ð¾Ð´.jpg
+  artifactKey: Guid(55cc81e54e7c9f443838b1c5ab49b352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ÐŸÐµÑˆÐµÑ…Ð¾Ð´Ð½Ñ‹Ð¹ Ð¿ÐµÑ€ÐµÑ…Ð¾Ð´.jpg using Guid(55cc81e54e7c9f443838b1c5ab49b352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '953b9c52ec6beebe27ad35d29c6c6703') in 0.041378 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Ð“Ð»Ð°Ð²Ð½Ð°Ñ Ð´Ð¾Ñ€Ð¾Ð³Ð°.png
-  artifactKey: Guid(33cd8ea66e48e954f99957fa3369f72d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Ð“Ð»Ð°Ð²Ð½Ð°Ñ Ð´Ð¾Ñ€Ð¾Ð³Ð°.png using Guid(33cd8ea66e48e954f99957fa3369f72d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b355d6cb16c69a6a77a00d1c0d1c8fcd') in 0.011848 seconds
+  Time since last request: 3956.063594 seconds.
+  path: Assets/Prefabs/Audi10.prefab
+  artifactKey: Guid(e9d3490787e406b42b08f27d401bb7d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Audi10.prefab using Guid(e9d3490787e406b42b08f27d401bb7d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efe9d9926b0f14463d61e9f2535b0fad') in 0.092327 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 122
+========================================================================
+Received Import Request.
+  Time since last request: 860.668854 seconds.
+  path: Assets/dzer1/models/asphalt_painted_white_7x7m.jpg
+  artifactKey: Guid(c264282539df7574fbcf275609587498) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dzer1/models/asphalt_painted_white_7x7m.jpg using Guid(c264282539df7574fbcf275609587498) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db0bca245286a187d8bde04c52cc678a') in 0.014920 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.003643 seconds.
+  path: Assets/dzer1/models/centerline_double_white_14m.jpg
+  artifactKey: Guid(eeb2a7cc9512eca43bed6ac51ef9d37f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dzer1/models/centerline_double_white_14m.jpg using Guid(eeb2a7cc9512eca43bed6ac51ef9d37f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03fb6dbe7b1b477919eef63326fd431c') in 0.013414 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/dzer1/models/lanes_4_stop_arrows_all_14x14m.jpg
+  artifactKey: Guid(fc261f48bf3db6b429ae3224d9192b29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dzer1/models/lanes_4_stop_arrows_all_14x14m.jpg using Guid(fc261f48bf3db6b429ae3224d9192b29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dad7d529ba5c935040c8c89d111e6f31') in 0.014154 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/dzer1/models/lanes_4_stop_arrows_right_14x14m.jpg
+  artifactKey: Guid(3a78723fb9cb37741945bc612a42ac0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dzer1/models/lanes_4_stop_arrows_right_14x14m.jpg using Guid(3a78723fb9cb37741945bc612a42ac0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '043a520ff475cd4c9ab9df94b5cdf040') in 0.015327 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/dzer1/models/crosswalk_continental_white.jpg
+  artifactKey: Guid(2c3ea9de80986f64a9217c0c089c4a26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dzer1/models/crosswalk_continental_white.jpg using Guid(2c3ea9de80986f64a9217c0c089c4a26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b22831620584566429659016a6945b87') in 0.014211 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/dzer1/models/centerline_stripes_white_14m.jpg
+  artifactKey: Guid(f8b22df13a7e6154ab87ba9067056860) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dzer1/models/centerline_stripes_white_14m.jpg using Guid(f8b22df13a7e6154ab87ba9067056860) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9300eadb0b947df8586eced564cbb36b') in 0.012288 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/dzer1/models/lanes_4_stop_arrows_sides_14x14m.jpg
+  artifactKey: Guid(73c8b1c341706b1449926dc990f9f06b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dzer1/models/lanes_4_stop_arrows_sides_14x14m.jpg using Guid(73c8b1c341706b1449926dc990f9f06b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8125bb2b65d841650f22744910c615d9') in 0.011788 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
   Time since last request: 0.000012 seconds.
-  path: Assets/Ð£ÑÑ‚ÑƒÐ¿Ð¸Ð”Ð¾Ñ€Ð¾Ð³Ñƒ.png
-  artifactKey: Guid(5b9206607611c4c4db969cc5a59faf01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Ð£ÑÑ‚ÑƒÐ¿Ð¸Ð”Ð¾Ñ€Ð¾Ð³Ñƒ.png using Guid(5b9206607611c4c4db969cc5a59faf01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4d02f8d5b5acc7e865724bbc9d9d53a') in 0.010991 seconds
+  path: Assets/dzer1/models/grey.jpg
+  artifactKey: Guid(73aa85300d5bbbe41a4875d4ee02211c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dzer1/models/grey.jpg using Guid(73aa85300d5bbbe41a4875d4ee02211c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a870b7e904f6cd58bbca38e0e286ffb8') in 0.012901 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Ð—Ð½Ð°ÐºÐ£ÑÑ‚ÑƒÐ¿Ð¸Ð”Ð¾Ñ€Ð¾Ð³Ñƒ.fbx
-  artifactKey: Guid(99ef40dc31487234d82aa8b2948242d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Ð—Ð½Ð°ÐºÐ£ÑÑ‚ÑƒÐ¿Ð¸Ð”Ð¾Ñ€Ð¾Ð³Ñƒ.fbx using Guid(99ef40dc31487234d82aa8b2948242d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e8877a6193ab3fff4881700e57dd1f0') in 0.081258 seconds
+  Time since last request: 0.000014 seconds.
+  path: Assets/dzer1/models/lanes_4_stripes_white_14x14m.jpg
+  artifactKey: Guid(e814d6a5d19e9e14194840addd064c8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dzer1/models/lanes_4_stripes_white_14x14m.jpg using Guid(e814d6a5d19e9e14194840addd064c8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ccd5028da6f00149a736b273b93ca9e') in 0.011372 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: Îïåðàöèÿ ââîäà/âûâîäà áûëà ïðåðâàíà èç-çà çàâåðøåíèÿ ïîòîêà êîìàíä èëè ïî çàïðîñó ïðèëîæåíèÿ.
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/dzer1/models/pavement_01_2x2m.jpg
+  artifactKey: Guid(a9d42ed0b3b4a934fa9965e9f1296657) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dzer1/models/pavement_01_2x2m.jpg using Guid(a9d42ed0b3b4a934fa9965e9f1296657) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '142866f5a4c4db97877f99c16f434ccd') in 0.011097 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/dzer1/models/lanes_4_stop_word_14x14m.jpg
+  artifactKey: Guid(38a531badd72df340a4f644746726ee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dzer1/models/lanes_4_stop_word_14x14m.jpg using Guid(38a531badd72df340a4f644746726ee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16a64096ebbb6b210064d77cfa1287c6') in 0.011413 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/dzer1/models/curbs_2m.jpg
+  artifactKey: Guid(a83dc980ed2b0d647968c9818e8cbcc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dzer1/models/curbs_2m.jpg using Guid(a83dc980ed2b0d647968c9818e8cbcc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a34df464a2f3735ddc832a6ee2b1a5eb') in 0.011513 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/dzer1/models/centerline_double_yellow_14m.jpg
+  artifactKey: Guid(2f55349edbf9654429930b88f744eecd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dzer1/models/centerline_double_yellow_14m.jpg using Guid(2f55349edbf9654429930b88f744eecd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c43f2cdb9cf4dd072f511f245f05f5a6') in 0.010412 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/dzer1/models/dzer1_0.fbx
+  artifactKey: Guid(9b7acf9df00466446a182ebefcfda8f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dzer1/models/dzer1_0.fbx using Guid(9b7acf9df00466446a182ebefcfda8f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd85386aaa08674ecce8b3d011b43cd4b') in 0.306435 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 203
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\VSTU\Auto-driving-simulator-3D\ADS\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\VSTU\Auto-driving-simulator-3D\ADS\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.583 seconds
+Refreshing native plugins compatible for Editor in 1.83 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.509 seconds
+Domain Reload Profiling: 1091ms
+	BeginReloadAssembly (139ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (51ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (27ms)
+	LoadAllAssembliesAndSetupDomain (385ms)
+		LoadAssemblies (233ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (203ms)
+			TypeCache.Refresh (197ms)
+				TypeCache.ScanAssembly (184ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (510ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (238ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (45ms)
+			ProcessInitializeOnLoadAttributes (162ms)
+			ProcessInitializeOnLoadMethodAttributes (15ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 1.29 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3100 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 22 unused Assets / (30.5 KB). Loaded Objects now: 3637.
+Memory consumption went from 121.6 MB to 121.5 MB.
+Total: 2.410600 ms (FindLiveObjects: 0.184300 ms CreateObjectMapping: 0.080400 ms MarkObjects: 2.105500 ms  DeleteObjects: 0.039800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
