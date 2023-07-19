@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System;
+using System.Collections.Generic;
 
 namespace Main
 {
@@ -9,25 +10,29 @@ namespace Main
     public class LightInfo
     {
         public string ID;
-        public string LaneID;
-        public float PosX;
-        public float PosY;
-        public int CurrentPhase;
+        public List<string> Lanes;
+        public List<float> PosX;
+        public List<float> PosY;
+        public List<char> CurrentPhases;
 
-        public LightInfo(string txt)
+        public LightInfo(string ID, List<string> Lanes, List<float> PosX, List<float> PosY, string CurrentPhases)
         {
-            if (txt.Contains(';'))
+            this.ID = ID;
+            this.Lanes = Lanes;
+            this.PosX = PosX;
+            this.PosY = PosY;
+
+            this.CurrentPhases = splitPhases(CurrentPhases);
+        }
+
+        public List<char> splitPhases(string phases)
+        {
+            List<char> split = new List<char>();
+            foreach (char ch in phases)
             {
-                string[] b = txt.Split(';');
-                if(b.Length >=5)
-                {
-                    ID = b[0];
-                    LaneID = b[1]; 
-                    PosX = (float)Convert.ToDouble(b[2], new CultureInfo("en-US"));
-                    PosY = (float)Convert.ToDouble(b[3], new CultureInfo("en-US"));
-                    CurrentPhase = int.Parse(b[4]);
-                }
+                split.Add(ch);
             }
+            return split;
         }
 
     }
@@ -38,35 +43,32 @@ namespace Main
     public class CarInfo
     {
         public string vehid;
-        public float posx;
-        public float posy;
+        public float PosX;
+        public float PosY;
         public float speed;
         public float heading;
         public float brakelight; //float
         public int sizeclass;
         public bool brakestate; //bool
 
-        public CarInfo(string txt)
+        public CarInfo(string vehid, double posx, double posy, double speed, double heading, string sizeclass)
         {
-            if (txt.Contains(";"))
-            {
-                string[] a = txt.Split(';'); //Разделить данные о транспортном средстве, порядок данных: vehid, posx, posy, speed, heading, stoplight state, sizeclass
-                if (a.Length >= 7)
-                {
-                    vehid = a[0];
-                    posx = (float)Convert.ToDouble(a[1], new CultureInfo("en-US"));
-                    posy = (float)Convert.ToDouble(a[2], new CultureInfo("en-US"));
-                    speed = (float)Convert.ToDouble(a[3], new CultureInfo("en-US"));
-                    heading = (float)Convert.ToDouble(a[4], new CultureInfo("en-US"));
-                    brakelight = (float)Convert.ToDouble(a[5], new CultureInfo("en-US"));
-                    sizeclass = (int)Convert.ToDouble(a[6], new CultureInfo("en-US"));     
+            this.vehid = vehid;
+            this.PosX = (float)posx;
+            this.PosY = (float)posy;
+            this.speed = (float)speed;
+            this.heading = (float)heading;
 
-                    if (brakelight == 1)
-                        brakestate = true;
-                    else
-                        brakestate = false;
-                }
-            }
+            string type = sizeclass.Substring(0, sizeclass.IndexOf('_') + 1);
+
+            if (type == "veh")
+                this.sizeclass = 0; //Ауди Влада
+            else if (type == "bus")
+                this.sizeclass = 1; //Автобус
+            else if (type == "truck")
+                this.sizeclass = 2; //Грузовик
+            else
+                this.sizeclass = 3; //Ничего или пешеход
         }
     }
 }
