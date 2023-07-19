@@ -150,8 +150,16 @@ public class Lights : MonoBehaviour
 
             foreach(var twoBackLights in backLights)
             {
-                twoBackLights.rightBackLight.intensity = 0;
-                twoBackLights.leftBackLight.intensity = 0;
+                if(specialBackLights.Count != 0)
+                {
+                    twoBackLights.rightBackLight.intensity = 0;
+                    twoBackLights.leftBackLight.intensity = 0;
+                }
+                else
+                {
+                    twoBackLights.rightBackLight.intensity = maxBrightness;
+                    twoBackLights.leftBackLight.intensity = maxBrightness;
+                }   
             }
         }
         else if (isMovingBack)
