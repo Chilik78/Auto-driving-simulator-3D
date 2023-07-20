@@ -120,6 +120,7 @@
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/Scripts/CodingConnected.TraCI.NET.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
@@ -406,10 +407,10 @@
 "Assets/Scripts/MainCar/MainCarController.cs"
 "Assets/Scripts/MainCar/MainCarSound.cs"
 "Assets/Scripts/MainCar/Penalty.cs"
-"Assets/Scripts/RawDataHandle.cs"
-"Assets/Scripts/scr_Main.cs"
-"Assets/Scripts/scr_TCP.cs"
-"Assets/Scripts/scr_VehicleHandler.cs"
+"Assets/Scripts/MainHandler.cs"
+"Assets/Scripts/SUMO.cs"
+"Assets/Scripts/VehicleHandler.cs"
+"Assets/Scripts/WheelDrive.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"

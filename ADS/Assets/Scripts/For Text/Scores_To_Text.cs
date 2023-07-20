@@ -52,7 +52,7 @@ public class Scores_To_Text : MonoBehaviour
     IEnumerator MoveText()
     {
         visualSubScores.GetComponent<Text>().enabled = true;
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.3f);
         visualSubScores.GetComponent<Text>().enabled = false;
     }
 

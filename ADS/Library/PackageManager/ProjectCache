@@ -6,7 +6,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638253130947990462
+      ticks: 638254574825538551
     m_Hash: 2362511596
   m_LockFileStatus:
     m_FilePath: "C:/Users/dchel/OneDrive/\u0420\u0430\u0431\u043E\u0447\u0438\u0439
@@ -15,7 +15,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638253130948005511
+      ticks: 638254574825538551
     m_Hash: 1613653515
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -629,6 +629,7 @@ m_ResolvedPackages:
     all:
     - 1.0.0
     - 3.0.0-exp.1
+    - 3.0.0-exp.3
     compatible:
     - 1.0.0
     recommended: 1.0.0
