@@ -76,7 +76,7 @@ public class scr_Main : MonoBehaviour
     /// <param name="lightInfo"></param>
     public void CreateLight(LightInfo lightInfo)
     {
-        var light = Instantiate(LightObject, new Vector3(lightInfo.PosX, 0, lightInfo.PosY), LightObject.transform.rotation);
+        var light = Instantiate(LightObject, new Vector3(lightInfo.PosX, 2, lightInfo.PosY), LightObject.transform.rotation);
         light.transform.SetParent(parentLights.transform, false);
         light.name = lightInfo.LaneID;
         lightsUnity.Add(light);

@@ -1,30 +1,35 @@
 using UnityEngine;
-using UnityEngine.UIElements;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.Experimental.GlobalIllumination;
 
 [System.Serializable]
 public class AxleInfo
 {
+    [Header("Левое колесо")]
     public WheelCollider leftWheel;
+    [Header("Правое колесо")]
     public WheelCollider rightWheel;
+    [Header("Мотор?")]
     public bool motor;
+    [Header("Поворачиваются?")]
     public bool steering;
 }
 
 public class MainCarController : MonoBehaviour
 {
+    [Header("Оси колес")]
     public List<AxleInfo> axleInfos; // Оси колес
-    public float maxMotorTorque; // Максимальный крутящий момент двигателя
-    public float maxSteeringAngle; // Максимальный угол поворота колес
-    public KeyCode headlights; // Кнопка, по которой будут включаться и выключаться фары
-    public KeyCode leftTurnSignal;// Кнопка, по которой будет включаться и выключаться левый поворотник
-    public KeyCode rightTurnSignal;// Кнопка, по которой будет включаться и выключаться правый поворотник
 
-    // находит визуальную часть колес
-    // устанавливает новые координаты
-    public void ApplyLocalPositionToVisuals(WheelCollider collider)
+    [Header("Максимальный крутящий момент двигателя")]
+    public float maxMotorTorque; // Максимальный крутящий момент двигателя
+
+    [Header("Максимальный угол поворота колес")]
+    public float maxSteeringAngle; // Максимальный угол поворота колес
+
+    /// <summary>
+    /// Функция находит визуальную часть колес и устанавливает новые координаты
+    /// </summary>
+    /// <param name="collider"></param>
+    private void ApplyLocalPositionToVisuals(WheelCollider collider)
     {
         if (collider.transform.childCount == 0)
         {
@@ -63,144 +68,55 @@ public class MainCarController : MonoBehaviour
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);     
         }
-
-        if (isLightTurnSignal)
-        {
-            switchTurnSignals();
-        }
-    }
-
-    private bool isLightOn = false;
-    private bool isLightTurnSignal = false;
-    private bool isLeftTurnSignal = false;
-    public void Update()
-    {
-        if (Input.GetKeyDown(headlights))
-        {
-            OnLights();
-        }
-
-        if((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && (isLightOn))
-        {
-            brightnessUpBackLights();
-        }
-        else
-        {
-            brightnessDownBackLights();
-        }
-
-        if(Input.GetKeyDown(leftTurnSignal) && !isLightTurnSignal)
-        {
-            isLeftTurnSignal = true;
-            switchTurnSignals();
-            isLightTurnSignal = true;
-        }
-        else if (Input.GetKeyDown(rightTurnSignal) && !isLightTurnSignal)
-        {
-            isLeftTurnSignal = false;
-            switchTurnSignals();
-            isLightTurnSignal = true;
-        }
-        else if (Input.GetKeyDown(leftTurnSignal) && isLightTurnSignal)
-        {
-            isLeftTurnSignal = true;
-            switchTurnSignals(true);
-            isLightTurnSignal = false;
-        }
-        else if (Input.GetKeyDown(rightTurnSignal) && isLightTurnSignal)
-        {
-            isLeftTurnSignal = false;
-            switchTurnSignals(true);
-            isLightTurnSignal = false;
-        }
-    }
-
-    public void OnLights()// Включение и выключение фар
-    {
-        
-        GameObject car = gameObject;
-
-        //Меняем значение задних фар на противоположное
-        Light currentLight = car.transform.GetChild(2).transform.GetChild(0).GetComponent<Light>();
-        currentLight.enabled = !currentLight.enabled;
-        currentLight = car.transform.GetChild(2).transform.GetChild(1).GetComponent<Light>();
-        currentLight.enabled = !currentLight.enabled;
-
-        //Меняем значение передних фар на противоположное
-        currentLight = car.transform.GetChild(5).transform.GetChild(0).GetComponent<Light>();
-        currentLight.enabled = !currentLight.enabled;
-        currentLight = car.transform.GetChild(5).transform.GetChild(1).GetComponent<Light>();
-        currentLight.enabled = !currentLight.enabled;
-
-        isLightOn = !isLightOn;
     }
 
     
-    public void brightnessUpBackLights()// Повышение яркости задних фар
+    private void Update()
     {
-        GameObject car = gameObject;
+        CalculateSpeed();
+        DestroyCar();
+    }
 
-        Light firstLight = car.transform.GetChild(2).transform.GetChild(0).GetComponent<Light>();
-        Light secondLight = car.transform.GetChild(2).transform.GetChild(1).GetComponent<Light>();
+    private static float speed;// Скорость машины
+    private bool isPositive;// Отслеживание направления скорости относительно машины
 
-        if(firstLight.intensity < 30 && secondLight.intensity < 30)
+    /// <summary>
+    /// Функция расчета скорости машины
+    /// </summary>
+    private void CalculateSpeed()
+    {
+        speed = gameObject.GetComponent<Rigidbody>().velocity.magnitude;
+
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && speed <= 0.2)
         {
-            firstLight.intensity += 15;
-            secondLight.intensity += 15;
+            isPositive = true;
+        }
+        else if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && speed <= 0.2)
+        {
+            isPositive = false;
+        }
+
+        speed = isPositive ? speed : speed * -1;
+        speed *= 3.6f;
+    }
+
+    /// <summary>
+    /// Функция удаления машины, если очки вождения <= 0
+    /// </summary>
+    private void DestroyCar()
+    {
+        if(Penalty.GetScores() <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 
-    public void brightnessDownBackLights()// Понижение яркости задних фар
+    /// <summary>
+    /// Функция получния скорости автомобиля
+    /// </summary>
+    /// <returns></returns>
+    public static float GetSpeed()
     {
-        GameObject car = gameObject;
-
-        Light firstLight = car.transform.GetChild(2).transform.GetChild(0).GetComponent<Light>();
-        Light secondLight = car.transform.GetChild(2).transform.GetChild(1).GetComponent<Light>();
-
-        if (firstLight.intensity > 10 && secondLight.intensity > 10)
-        {
-            firstLight.intensity -= 15;
-            secondLight.intensity -= 15;
-        }
-    }
-
-    public void switchTurnSignals(bool isStopSignal = false)
-    {
-        //Debug.Log(isLeftTurnSignal + " | " + isLeftTurnSignal);
-
-        GameObject car = gameObject;
-
-        if(isLeftTurnSignal && isLeftTurnSignal && isStopSignal)
-        {
-            Light currentTurnSignal = car.transform.GetChild(3).transform.GetChild(1).GetComponent<Light>();
-            currentTurnSignal.enabled = false;
-        }
-        else if(!isLeftTurnSignal && isLeftTurnSignal && isStopSignal)
-        {
-            Light currentTurnSignal = car.transform.GetChild(3).transform.GetChild(0).GetComponent<Light>();
-            currentTurnSignal.enabled = false;
-        }
-
-        if (isLeftTurnSignal && !isLightTurnSignal)
-        {
-            Light currentTurnSignal = car.transform.GetChild(3).transform.GetChild(1).GetComponent<Light>();
-            currentTurnSignal.enabled = !currentTurnSignal.enabled;
-            Debug.Log("True");
-        }
-        else if (!isLeftTurnSignal && !isLightTurnSignal)
-        {
-            Light currentTurnSignal = car.transform.GetChild(3).transform.GetChild(0).GetComponent<Light>();
-            currentTurnSignal.enabled = !currentTurnSignal.enabled;
-        }
-        else if (isLeftTurnSignal && isLeftTurnSignal)
-        {
-            Light currentTurnSignal = car.transform.GetChild(3).transform.GetChild(1).GetComponent<Light>();
-            currentTurnSignal.enabled = !currentTurnSignal.enabled;
-        }
-        else if (!isLeftTurnSignal && isLightTurnSignal)
-        {
-            Light currentTurnSignal = car.transform.GetChild(3).transform.GetChild(0).GetComponent<Light>();
-            currentTurnSignal.enabled = !currentTurnSignal.enabled;
-        }
+        return speed;
     }
 }

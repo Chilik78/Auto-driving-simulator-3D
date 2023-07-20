@@ -15,7 +15,7 @@ D:/VSTU/Auto-driving-simulator-3D/ADS
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-57176
+50340
 Successfully changed project path to: D:/VSTU/Auto-driving-simulator-3D/ADS
 D:/VSTU/Auto-driving-simulator-3D/ADS
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,11 +49,11 @@ D:/VSTU/Auto-driving-simulator-3D/ADS
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [5576] Host "[IP] 10.0.0.100 [Port] 0 [Flags] 2 [Guid] 888321739 [EditorId] 888321739 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HEA453S) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [6820] Host "[IP] 10.0.0.100 [Port] 0 [Flags] 2 [Guid] 989218861 [EditorId] 989218861 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HEA453S) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [5576] Host "[IP] 10.0.0.100 [Port] 0 [Flags] 2 [Guid] 888321739 [EditorId] 888321739 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HEA453S) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [6820] Host "[IP] 10.0.0.100 [Port] 0 [Flags] 2 [Guid] 989218861 [EditorId] 989218861 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-HEA453S) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 4.27 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 4.01 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.4f1 (35713cd46cd7)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/Resources/UnitySubsystems
@@ -69,11 +69,11 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56284
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56728
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006424 seconds.
+Registered in 0.006816 seconds.
 - Loaded All Assemblies, in  0.236 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
@@ -85,15 +85,15 @@ Domain Reload Profiling: 429ms
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (25ms)
+	RebuildCommonClasses (24ms)
 	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (45ms)
+	initialDomainReloadingComplete (46ms)
 	LoadAllAssembliesAndSetupDomain (94ms)
 		LoadAssemblies (62ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (90ms)
+		AnalyzeDomain (89ms)
 			TypeCache.Refresh (89ms)
-				TypeCache.ScanAssembly (81ms)
+				TypeCache.ScanAssembly (80ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
 	FinalizeReload (194ms)
@@ -101,11 +101,11 @@ Domain Reload Profiling: 429ms
 		RebuildScriptCaches (0ms)
 		SetupLoadedEditorAssemblies (152ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (7ms)
+			InitializePlatformSupportModulesInManaged (8ms)
 			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (104ms)
+			ProcessInitializeOnLoadAttributes (103ms)
 			ProcessInitializeOnLoadMethodAttributes (34ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
@@ -116,57 +116,56 @@ Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\VSTU\Auto-driving-simulator-3D\ADS\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\VSTU\Auto-driving-simulator-3D\ADS\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0.486 seconds
-Refreshing native plugins compatible for Editor in 1.24 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.483 seconds
+Refreshing native plugins compatible for Editor in 1.33 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
 - Finished resetting the current domain, in  0.351 seconds
-Domain Reload Profiling: 836ms
+Domain Reload Profiling: 834ms
 	BeginReloadAssembly (97ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (18ms)
+		CreateAndSetChildDomain (17ms)
 	RebuildCommonClasses (23ms)
 	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (32ms)
-	LoadAllAssembliesAndSetupDomain (326ms)
-		LoadAssemblies (180ms)
+	initialDomainReloadingComplete (31ms)
+	LoadAllAssembliesAndSetupDomain (323ms)
+		LoadAssemblies (177ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
 		AnalyzeDomain (192ms)
 			TypeCache.Refresh (179ms)
-				TypeCache.ScanAssembly (171ms)
+				TypeCache.ScanAssembly (170ms)
 			ScanForSourceGeneratedMonoScriptInfo (10ms)
 			ResolveRequiredComponents (3ms)
-	FinalizeReload (351ms)
+	FinalizeReload (352ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (250ms)
+		SetupLoadedEditorAssemblies (248ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (5ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (45ms)
-			ProcessInitializeOnLoadAttributes (177ms)
+			ProcessInitializeOnLoadAttributes (176ms)
 			ProcessInitializeOnLoadMethodAttributes (14ms)
 			AfterProcessingInitializeOnLoad (6ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (4ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
 Refreshing native plugins compatible for Editor in 1.60 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3121 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 31 unused Assets / (56.3 KB). Loaded Objects now: 3586.
-Memory consumption went from 123.9 MB to 123.8 MB.
-Total: 2.317400 ms (FindLiveObjects: 0.188900 ms CreateObjectMapping: 0.067700 ms MarkObjects: 1.989900 ms  DeleteObjects: 0.070400 ms)
+Unloading 3171 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 31 unused Assets / (56.5 KB). Loaded Objects now: 3636.
+Memory consumption went from 124.7 MB to 124.7 MB.
+Total: 2.903000 ms (FindLiveObjects: 0.217800 ms CreateObjectMapping: 0.152300 ms MarkObjects: 2.447000 ms  DeleteObjects: 0.085400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
@@ -174,3 +173,912 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 878.805903 seconds.
+  path: Assets/Audio
+  artifactKey: Guid(6909ba534e33f894e9fb3db7b7769d4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio using Guid(6909ba534e33f894e9fb3db7b7769d4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'acb17114afa2eb914030874eb1d7b9b1') in 0.002633 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.396130 seconds.
+  path: Assets/Models/Главная дорога.png
+  artifactKey: Guid(33cd8ea66e48e954f99957fa3369f72d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Главная дорога.png using Guid(33cd8ea66e48e954f99957fa3369f72d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd754376c640cb1ffdc292152e093ba7e') in 0.048035 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Models/ЗнакДвижениеНаправо.fbx
+  artifactKey: Guid(c0e1369e26f64324cbb6e8f67ea31e89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ЗнакДвижениеНаправо.fbx using Guid(c0e1369e26f64324cbb6e8f67ea31e89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'faf8411eb8c358b9e46afba89e47f526') in 0.087597 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Models/Главная дорога 1.png
+  artifactKey: Guid(459b2af5ecb437c44941e366610130cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Главная дорога 1.png using Guid(459b2af5ecb437c44941e366610130cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '699d395db19cd091c8edf60c684d8c6b') in 0.004053 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Models/ЗнакДвижениеНаправоИлиНалево.fbx
+  artifactKey: Guid(3d21c01f8a8fdcd42a83fafcb8fd80ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ЗнакДвижениеНаправоИлиНалево.fbx using Guid(3d21c01f8a8fdcd42a83fafcb8fd80ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3129824b16682bc4d47403ad8504f2a') in 0.022197 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Models/ЗнакПешеходныйПереход.fbx
+  artifactKey: Guid(440d9aa34fa13b94ba7d3ad2f6fd3472) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ЗнакПешеходныйПереход.fbx using Guid(440d9aa34fa13b94ba7d3ad2f6fd3472) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7345e8e4449f5637bd1c605cea2f3c96') in 0.019312 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Models/ЗнакДвижениеПрямо.fbx
+  artifactKey: Guid(0df7321bd4ce80a4b89354f2a3fdc41a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ЗнакДвижениеПрямо.fbx using Guid(0df7321bd4ce80a4b89354f2a3fdc41a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e0f0c33bd19692273e591c81fe8a7ea') in 0.020824 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Models/Колесо Ауди (Модель).fbx
+  artifactKey: Guid(8c867bf97d9278c47a56043e44ca3733) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Колесо Ауди (Модель).fbx using Guid(8c867bf97d9278c47a56043e44ca3733) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1738279ad8f85f78af7c3aeaabcccb76') in 0.028370 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Models/Пешеходный переход.jpg
+  artifactKey: Guid(55cc81e54e7c9f443838b1c5ab49b352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Пешеходный переход.jpg using Guid(55cc81e54e7c9f443838b1c5ab49b352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cdac4a43bbf026a519655b210ff690a') in 0.008731 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Models/Стоп.png
+  artifactKey: Guid(d988752becf53554cb5e4f70754df47a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Стоп.png using Guid(d988752becf53554cb5e4f70754df47a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2db30eeff3c2d48b2557609dd73a2757') in 0.011004 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Models/ДвижениеНалево.png
+  artifactKey: Guid(feff714b9b4ad12489a74ff3fa0ffd47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ДвижениеНалево.png using Guid(feff714b9b4ad12489a74ff3fa0ffd47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5de3923b6db08222a53c9d2d80e69ca') in 0.010279 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Models/ДвижениеПрямо.png
+  artifactKey: Guid(4a61b26d57b83b945bebb1c49a232769) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ДвижениеПрямо.png using Guid(4a61b26d57b83b945bebb1c49a232769) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84f76ef2ec452a5f077c5861c8663ac7') in 0.012315 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Models/ЗнакСтоп.fbx
+  artifactKey: Guid(9fa33b0adc46e9648832ee9f9faf36a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ЗнакСтоп.fbx using Guid(9fa33b0adc46e9648832ee9f9faf36a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b944f7c6a1a519bde1d7c80b03add29') in 0.024203 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Models/УступиДорогу.png
+  artifactKey: Guid(5b9206607611c4c4db969cc5a59faf01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/УступиДорогу.png using Guid(5b9206607611c4c4db969cc5a59faf01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e19718fd71f1f2d04d44ff1a6fa1ecb8') in 0.014001 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Models/ЗнакУступиДорогу.fbx
+  artifactKey: Guid(99ef40dc31487234d82aa8b2948242d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ЗнакУступиДорогу.fbx using Guid(99ef40dc31487234d82aa8b2948242d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63b9251fbecf7ada05496bcd90bf1392') in 0.019622 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 3.363246 seconds.
+  path: Assets/Prefabs/City.prefab
+  artifactKey: Guid(117c510364b1cbf4a896db2c349f11eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/City.prefab using Guid(117c510364b1cbf4a896db2c349f11eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c7b41e2835f1fc0db4360eb219f8bdd') in 0.146278 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1274
+========================================================================
+Received Import Request.
+  Time since last request: 14.167453 seconds.
+  path: Assets/dzer1/models/centerline_double_white_14m.jpg
+  artifactKey: Guid(eeb2a7cc9512eca43bed6ac51ef9d37f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dzer1/models/centerline_double_white_14m.jpg using Guid(eeb2a7cc9512eca43bed6ac51ef9d37f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03fb6dbe7b1b477919eef63326fd431c') in 0.010101 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/dzer1/models/lanes_4_stop_arrows_all_14x14m.jpg
+  artifactKey: Guid(fc261f48bf3db6b429ae3224d9192b29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dzer1/models/lanes_4_stop_arrows_all_14x14m.jpg using Guid(fc261f48bf3db6b429ae3224d9192b29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dad7d529ba5c935040c8c89d111e6f31') in 0.012510 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/dzer1/models/centerline_stripes_white_14m.jpg
+  artifactKey: Guid(f8b22df13a7e6154ab87ba9067056860) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dzer1/models/centerline_stripes_white_14m.jpg using Guid(f8b22df13a7e6154ab87ba9067056860) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9300eadb0b947df8586eced564cbb36b') in 0.011634 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/dzer1/models/lanes_4_stripes_white_14x14m.jpg
+  artifactKey: Guid(e814d6a5d19e9e14194840addd064c8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dzer1/models/lanes_4_stripes_white_14x14m.jpg using Guid(e814d6a5d19e9e14194840addd064c8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ccd5028da6f00149a736b273b93ca9e') in 0.012846 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/dzer1/models/curbs_2m.jpg
+  artifactKey: Guid(a83dc980ed2b0d647968c9818e8cbcc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dzer1/models/curbs_2m.jpg using Guid(a83dc980ed2b0d647968c9818e8cbcc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a34df464a2f3735ddc832a6ee2b1a5eb') in 0.011636 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/dzer1/models/centerline_single_white_14m.jpg
+  artifactKey: Guid(0011125593bd5a743b60caa3cf5adf84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/dzer1/models/centerline_single_white_14m.jpg using Guid(0011125593bd5a743b60caa3cf5adf84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b3c319fb61c134a253ddb8747060c0c') in 0.011870 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 6.400115 seconds.
+  path: Assets/Dzer/models/ceramicRoof_2.jpg
+  artifactKey: Guid(b57595c9b2311cd41aca485b6c341895) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/ceramicRoof_2.jpg using Guid(b57595c9b2311cd41aca485b6c341895) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bad0486e6d109e8571c81e21a62969f6') in 0.015684 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Dzer/models/ceramicRoof_5.jpg
+  artifactKey: Guid(358e08cbf63ff954cb24efad24470425) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/ceramicRoof_5.jpg using Guid(358e08cbf63ff954cb24efad24470425) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '499d1faeb895afcc5a85f3f9f6b8f105') in 0.033703 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Dzer/models/flatRoof_36.jpg
+  artifactKey: Guid(8c2360335aaa540488bab89b749d5ccf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/flatRoof_36.jpg using Guid(8c2360335aaa540488bab89b749d5ccf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '010dbe5856f905a39f4cc13d18c6b6b8') in 0.031856 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Dzer/models/flatRoof_15.jpg
+  artifactKey: Guid(aca0586d2a9aeea48815caddab797982) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/flatRoof_15.jpg using Guid(aca0586d2a9aeea48815caddab797982) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cee78f8e92ac2e7e12775a95feb4bc6f') in 0.027775 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Dzer/models/flatRoof_40.jpg
+  artifactKey: Guid(186a2ed83bcc60a4bb1995f2c8b7fdcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/flatRoof_40.jpg using Guid(186a2ed83bcc60a4bb1995f2c8b7fdcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35dd6180adafc28ef8e91201b0905696') in 0.010712 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Dzer/models/flatRoof_6.jpg
+  artifactKey: Guid(84e0f99f7804da54099a86f214c5d0a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/flatRoof_6.jpg using Guid(84e0f99f7804da54099a86f214c5d0a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76deaee49b01ac58675d6082c34820a3') in 0.010960 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Dzer/models/flatRoof_19.jpg
+  artifactKey: Guid(1d9f83dcc32811b419590ee049112aa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/flatRoof_19.jpg using Guid(1d9f83dcc32811b419590ee049112aa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5961595b5b513e52fb314ad0186d4809') in 0.011323 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Dzer/models/flatRoof_27.jpg
+  artifactKey: Guid(cbad4fa0d960dbe4c84b29ed4cce554a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/flatRoof_27.jpg using Guid(cbad4fa0d960dbe4c84b29ed4cce554a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '135cc4880f15bb48124eb37944cd4bbc') in 0.010620 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Dzer/models/flatRoof_9.jpg
+  artifactKey: Guid(70320480b8f02a34e9096ef5d70e53d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/flatRoof_9.jpg using Guid(70320480b8f02a34e9096ef5d70e53d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb4e9a59b216564616b648678dc8e657') in 0.011013 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Dzer/models/flatRoof_39.jpg
+  artifactKey: Guid(a6c4772bf6ee1604da1ba61e3d2c7832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/flatRoof_39.jpg using Guid(a6c4772bf6ee1604da1ba61e3d2c7832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fa1220c13fd573aecee4ad449ea7e73') in 0.010081 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Dzer/models/ceramicRoof_4.jpg
+  artifactKey: Guid(75beec47b99631842b9626b3349c445c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/ceramicRoof_4.jpg using Guid(75beec47b99631842b9626b3349c445c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df4a361e6ce01453de3ee030a95910f2') in 0.010474 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Dzer/models/g_f001_t001_Mercantile_005.jpg
+  artifactKey: Guid(9c5ec4dd90458ca48b878c23821473b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t001_Mercantile_005.jpg using Guid(9c5ec4dd90458ca48b878c23821473b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d30b66bb805947454669ad7d3c01f66') in 0.009945 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Dzer/models/flatRoof_14.jpg
+  artifactKey: Guid(c0c19e30334e07648be09cc9d5b6a6ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/flatRoof_14.jpg using Guid(c0c19e30334e07648be09cc9d5b6a6ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d23fafec119fbc2ee9d12c57702e605') in 0.009983 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Dzer/models/flatRoof_31.jpg
+  artifactKey: Guid(9788a47a7c6f3e7418f08b84767eb1db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/flatRoof_31.jpg using Guid(9788a47a7c6f3e7418f08b84767eb1db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe98edec8ea345a800a80ea60e891107') in 0.011222 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Dzer/models/flatRoof_23.jpg
+  artifactKey: Guid(140aca6072e16ab4388fbfb78bc559b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/flatRoof_23.jpg using Guid(140aca6072e16ab4388fbfb78bc559b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a037fb7ac261c48921ab04bef3f1192a') in 0.011421 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Dzer/models/flatRoof_28.jpg
+  artifactKey: Guid(1da6a97f780fd464887bde763655478e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/flatRoof_28.jpg using Guid(1da6a97f780fd464887bde763655478e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99d8068d1842e54cb70aeacfe8eaac61') in 0.011561 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Dzer/models/flatRoof_32.jpg
+  artifactKey: Guid(75126653c6043654994cd3ca5b91be76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/flatRoof_32.jpg using Guid(75126653c6043654994cd3ca5b91be76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ab3281ae7290ed20500c2d74c108a19') in 0.011029 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Dzer/models/flatRoof_3.jpg
+  artifactKey: Guid(a64073d0cd936be4196cc1dfaf7ce8ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/flatRoof_3.jpg using Guid(a64073d0cd936be4196cc1dfaf7ce8ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e864515c8d3fd6dfe740f22e872d412c') in 0.012278 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.451340 seconds.
+  path: Assets/Dzer/models/g_f001_t002_Mercantile_003.jpg
+  artifactKey: Guid(c3fc18609074b53418a6f8f39285c1f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t002_Mercantile_003.jpg using Guid(c3fc18609074b53418a6f8f39285c1f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '435410da0892adce6f0f210117b5bfeb') in 0.010238 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Dzer/models/g_f001_t003_Assembly_000.jpg
+  artifactKey: Guid(1decb155ff678ce428fb92f89d2c5e4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t003_Assembly_000.jpg using Guid(1decb155ff678ce428fb92f89d2c5e4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a70cdec00c910bcbd644e70be8e8e88d') in 0.009990 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Dzer/models/g_f001_t002_Transport_001.jpg
+  artifactKey: Guid(ac713b4d71a58824fbb6747441c408af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t002_Transport_001.jpg using Guid(ac713b4d71a58824fbb6747441c408af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82f0c06b1e66206a40e9e3ff1c702027') in 0.010097 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Dzer/models/g_f001_t002_Mercantile_004.jpg
+  artifactKey: Guid(768a12ae8c3fa794d9dbafc2b7d27335) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t002_Mercantile_004.jpg using Guid(768a12ae8c3fa794d9dbafc2b7d27335) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '867c783f7c9b31e25b70909ce2375df5') in 0.009459 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Dzer/models/g_f001_t003_Mercantile_005.jpg
+  artifactKey: Guid(37134183b45a85a4f96360249b0ca2be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t003_Mercantile_005.jpg using Guid(37134183b45a85a4f96360249b0ca2be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96ecab530edb7d3bfa9dda62172a62db') in 0.009208 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Dzer/models/g_f001_t003_Residential_005.jpg
+  artifactKey: Guid(4537d7448bca5cf4daf91984b3f17dd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t003_Residential_005.jpg using Guid(4537d7448bca5cf4daf91984b3f17dd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0eede8f3fe0edf39f26d53f9a76039af') in 0.009622 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Dzer/models/g_f001_t004_Mercantile_006.jpg
+  artifactKey: Guid(e0a69ebabe00e884cb379e79b0e86696) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t004_Mercantile_006.jpg using Guid(e0a69ebabe00e884cb379e79b0e86696) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f1a7e29a94f8033a020b357dc9a822a') in 0.009255 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Dzer/models/g_f001_t003_Residential_012.jpg
+  artifactKey: Guid(0be210849420c63419d84ff4794501d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t003_Residential_012.jpg using Guid(0be210849420c63419d84ff4794501d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d5cb9c43d7f74e3f772d8c71a301db3') in 0.010063 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Dzer/models/g_f001_t004_Residential_000.jpg
+  artifactKey: Guid(ab28f61a982ba744ea4d5289b47470fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t004_Residential_000.jpg using Guid(ab28f61a982ba744ea4d5289b47470fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bdc72c271d6ec7b4b1705aacbc9f583') in 0.009843 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Dzer/models/g_f001_t003_Residential_009.jpg
+  artifactKey: Guid(81b7a484e26016442b01d8a6741be742) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t003_Residential_009.jpg using Guid(81b7a484e26016442b01d8a6741be742) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a29c761cdbba67d09d8a33a5c71cb642') in 0.010131 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Dzer/models/g_f001_t004_Residential_001.jpg
+  artifactKey: Guid(d8a6659c4604f9b45ac18ae490094751) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t004_Residential_001.jpg using Guid(d8a6659c4604f9b45ac18ae490094751) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4da9c8ee2b01a45c528520ae63c23834') in 0.009840 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Dzer/models/g_f001_t003_Residential_010.jpg
+  artifactKey: Guid(a7c6d3874583ae940bb0611c3e2c183a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t003_Residential_010.jpg using Guid(a7c6d3874583ae940bb0611c3e2c183a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2833c6c85f965ab9bbb483450ae15f46') in 0.010431 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Dzer/models/g_f001_t003_Industry_001.jpg
+  artifactKey: Guid(c3307f086bc5bd34080222052df1de5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t003_Industry_001.jpg using Guid(c3307f086bc5bd34080222052df1de5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3759e04ad027e8ce7c2c4f9e9b175d9f') in 0.009683 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Dzer/models/g_f001_t003_Residential_004.jpg
+  artifactKey: Guid(af49675d5694c3e45ad12b46181c02db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t003_Residential_004.jpg using Guid(af49675d5694c3e45ad12b46181c02db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc2bf65b42fdb08c57c92810294f283f') in 0.010007 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Dzer/models/g_f001_t002_Residential_001.jpg
+  artifactKey: Guid(192060049f9d9c447aa6164794f92179) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t002_Residential_001.jpg using Guid(192060049f9d9c447aa6164794f92179) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8257025f8fb2ead73fc614a2d5d655b') in 0.009681 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Dzer/models/g_f001_t003_Residential_011.jpg
+  artifactKey: Guid(975022b16432e5c40a47c9547078a5a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t003_Residential_011.jpg using Guid(975022b16432e5c40a47c9547078a5a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8078aa219770402cb0c9a10ac1737121') in 0.009694 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Dzer/models/g_f001_t003_Residential_002.jpg
+  artifactKey: Guid(045c12ee40a3ed04986268998bf1220c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t003_Residential_002.jpg using Guid(045c12ee40a3ed04986268998bf1220c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad333f6b1bd70cb3d83062695cc0bf87') in 0.011029 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Dzer/models/g_f001_t004_Industry_000.jpg
+  artifactKey: Guid(19e7a9efbaeef314f8d33f8bb65abcfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t004_Industry_000.jpg using Guid(19e7a9efbaeef314f8d33f8bb65abcfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '454c7273e245ed9e3bd600e2ee7c4e8f') in 0.010863 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 2.015170 seconds.
+  path: Assets/Dzer/models/g_f001_t004_Residential_004.jpg
+  artifactKey: Guid(2d75743afb771a449a9370f1c78f772b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t004_Residential_004.jpg using Guid(2d75743afb771a449a9370f1c78f772b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75cb6a85079b8ef98afb795eeb9b48bd') in 0.009653 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Dzer/models/g_f001_t006_Mercantile_018.jpg
+  artifactKey: Guid(39d851724eabe1743b08dbfb150e4996) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t006_Mercantile_018.jpg using Guid(39d851724eabe1743b08dbfb150e4996) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18379d79c892c9dc1403f03112b9ce4c') in 0.010567 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Dzer/models/g_f001_t006_Industry_002.jpg
+  artifactKey: Guid(c87a5568e13103a4d948f50607f9d636) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t006_Industry_002.jpg using Guid(c87a5568e13103a4d948f50607f9d636) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c2c2172d7d4be9c8583e8ef2348353d') in 0.010074 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Dzer/models/g_f001_t006_Office_009.jpg
+  artifactKey: Guid(504cd63172d10c04f99326b7694ca890) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t006_Office_009.jpg using Guid(504cd63172d10c04f99326b7694ca890) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ad3ceaf6cf529690edf672bda7bf775') in 0.010228 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Dzer/models/g_f001_t006_Residential_020.jpg
+  artifactKey: Guid(c54758d248e18744d9abc7b27d70c304) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t006_Residential_020.jpg using Guid(c54758d248e18744d9abc7b27d70c304) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2c11c43bde37ddc88c98ada60d5cc3b') in 0.010352 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Dzer/models/g_f001_t006_Residential_031.jpg
+  artifactKey: Guid(e990e991b05e83442817db28dd197730) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t006_Residential_031.jpg using Guid(e990e991b05e83442817db28dd197730) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e55424d8b828b8c68f5b8c7afee30789') in 0.010040 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Dzer/models/g_f001_t006_Residential_002.jpg
+  artifactKey: Guid(15379749239f2b74781405406e7de524) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t006_Residential_002.jpg using Guid(15379749239f2b74781405406e7de524) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25b2a6e0674a60550f411fada5a5e336') in 0.009612 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Dzer/models/g_f001_t006_Residential_028.jpg
+  artifactKey: Guid(e35ef7b1bb5068a4588d09b8f4c7fc73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t006_Residential_028.jpg using Guid(e35ef7b1bb5068a4588d09b8f4c7fc73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e34f949a2b67381f292ecf90b9d2051') in 0.010676 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Dzer/models/g_f001_t006_Residential_022.jpg
+  artifactKey: Guid(897f82b3f50c5734da8fec2a0105281e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t006_Residential_022.jpg using Guid(897f82b3f50c5734da8fec2a0105281e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46d298e0247a9160eeb18901972d7747') in 0.010031 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Dzer/models/g_f001_t006_Residential_006.jpg
+  artifactKey: Guid(62786b352a15cf04da8725e63ecf64a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t006_Residential_006.jpg using Guid(62786b352a15cf04da8725e63ecf64a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9c7addc26c8e91e56637df595c53d5f') in 0.009940 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Dzer/models/g_f001_t006_Residential_034.jpg
+  artifactKey: Guid(65ab5e0276ca01e4e8ca6e0605f6a954) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t006_Residential_034.jpg using Guid(65ab5e0276ca01e4e8ca6e0605f6a954) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20a191e294986073cce5f38cd16d813e') in 0.009805 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Dzer/models/g_f001_t006_Residential_012.jpg
+  artifactKey: Guid(13d9a14971fe5384caf01d6f33c631df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t006_Residential_012.jpg using Guid(13d9a14971fe5384caf01d6f33c631df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a521d9bee273e37676b2d00d79eaa3a') in 0.009982 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Dzer/models/g_f001_t006_Residential_017.jpg
+  artifactKey: Guid(656ad18795b55f64691c9e3773435a2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t006_Residential_017.jpg using Guid(656ad18795b55f64691c9e3773435a2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd493db08f837911160c84cf9f937e781') in 0.009274 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Dzer/models/g_f001_t006_Mercantile_012.jpg
+  artifactKey: Guid(08193ff7d88774f4b996946a340a0f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t006_Mercantile_012.jpg using Guid(08193ff7d88774f4b996946a340a0f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bc83b1c810f1d428fdc8b88ae5cb8ec') in 0.009825 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Dzer/models/g_f001_t006_Service_004.jpg
+  artifactKey: Guid(bcf7ea3c28f08bb428874bd860cbbcce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t006_Service_004.jpg using Guid(bcf7ea3c28f08bb428874bd860cbbcce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '678d6c187adab8c032edaf090938822c') in 0.009526 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Dzer/models/g_f001_t006_Residential_014.jpg
+  artifactKey: Guid(6c2ed09ab8afd6c49916b8eb7f1e10de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t006_Residential_014.jpg using Guid(6c2ed09ab8afd6c49916b8eb7f1e10de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b07870358a5438268215452194b217e') in 0.009418 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Dzer/models/g_f001_t006_Residential_024.jpg
+  artifactKey: Guid(501a501326af7064da1b00a0fbf8dacb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t006_Residential_024.jpg using Guid(501a501326af7064da1b00a0fbf8dacb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a802ab1919cf98e89a08469f624432b') in 0.009625 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.139589 seconds.
+  path: Assets/Dzer/models/g_f001_t014_Industry_000.jpg
+  artifactKey: Guid(42abbd661e809084eb913174346ee322) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f001_t014_Industry_000.jpg using Guid(42abbd661e809084eb913174346ee322) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6feb755cd1f5a80edb44146161c8f1c0') in 0.010054 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Dzer/models/g_f002_t002_Mercantile_001.jpg
+  artifactKey: Guid(817ad13765b241b439c5c01f34a848a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f002_t002_Mercantile_001.jpg using Guid(817ad13765b241b439c5c01f34a848a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '258442de46fd6cba807716e018f92d54') in 0.009801 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Dzer/models/g_f002_t006_Residential_006.jpg
+  artifactKey: Guid(f9df3c46ff5196642b478e30060cb8e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f002_t006_Residential_006.jpg using Guid(f9df3c46ff5196642b478e30060cb8e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15d604e15f8ac76e931aec5543d2bc5a') in 0.010210 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Dzer/models/u_f001_t002_Residential_004.jpg
+  artifactKey: Guid(3f60602fd797eae4b95aca61609d07c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f001_t002_Residential_004.jpg using Guid(3f60602fd797eae4b95aca61609d07c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2d659d5c288c97a038acb4f9b71e637') in 0.009229 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Dzer/models/g_f002_t006_Office_000.jpg
+  artifactKey: Guid(cf477ffcf045ac647bdfc0b580e0a7a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f002_t006_Office_000.jpg using Guid(cf477ffcf045ac647bdfc0b580e0a7a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a03ffb79c1338a67bd6c8b11a2b6d6fd') in 0.009966 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Dzer/models/g_f002_t006_Mercantile_013.jpg
+  artifactKey: Guid(a0d8768d01048a64389b83e71e0d49da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f002_t006_Mercantile_013.jpg using Guid(a0d8768d01048a64389b83e71e0d49da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7777487be7a62c41f05982d4dcd1f264') in 0.009295 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Dzer/models/u_f001_t002_Residential_010.jpg
+  artifactKey: Guid(05162cd8723ce9147b2b4f73ecabe889) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f001_t002_Residential_010.jpg using Guid(05162cd8723ce9147b2b4f73ecabe889) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6525dfe1e238a5b2f6c3b38f897a7d77') in 0.008254 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Dzer/models/g_f002_t006_Residential_005.jpg
+  artifactKey: Guid(abf54454e710f5740895c0f42229c755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f002_t006_Residential_005.jpg using Guid(abf54454e710f5740895c0f42229c755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9909a9a04eb8fa360cf1d5c9a5ad0eb') in 0.009655 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Dzer/models/u_f001_t003_Residential_008.jpg
+  artifactKey: Guid(f6361379a43b5ac4fb3ec4cdba071fab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f001_t003_Residential_008.jpg using Guid(f6361379a43b5ac4fb3ec4cdba071fab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a74ef855cb979c4b97a691c9599c2e1f') in 0.009710 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Dzer/models/g_f002_t001_Industry_000.jpg
+  artifactKey: Guid(765c15743ff0a2642b95e06d4b94e665) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f002_t001_Industry_000.jpg using Guid(765c15743ff0a2642b95e06d4b94e665) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8509b01b584b23b3d94e9f7320cb9fcc') in 0.009958 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Dzer/models/u_f001_t002_Residential_009.jpg
+  artifactKey: Guid(1943aa8853f69ca48bc4c7eefd82d339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f001_t002_Residential_009.jpg using Guid(1943aa8853f69ca48bc4c7eefd82d339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54fa58b5b9d8324ef334dfb3f701b2ad') in 0.009983 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Dzer/models/g_f002_t006_Mercantile_003.jpg
+  artifactKey: Guid(9bd067456c9d3c3499fbe01149eb3c78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/g_f002_t006_Mercantile_003.jpg using Guid(9bd067456c9d3c3499fbe01149eb3c78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7a14bdbb2e2afb6cf6ee0d1d5b6a8ea') in 0.009175 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Dzer/models/u_f001_t003_Residential_006.jpg
+  artifactKey: Guid(da71760596e9ba3479e6dc4d014df77a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f001_t003_Residential_006.jpg using Guid(da71760596e9ba3479e6dc4d014df77a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac02e64f413b78da86bedbbe81214773') in 0.009470 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.169622 seconds.
+  path: Assets/Dzer/models/u_f001_t005_Residential_002.jpg
+  artifactKey: Guid(a80f593cb3e6f1448a00a23c94aa30a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f001_t005_Residential_002.jpg using Guid(a80f593cb3e6f1448a00a23c94aa30a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca976436126f68924a299b880cd9c5db') in 0.009967 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Dzer/models/u_f002_t002_Utility_002.jpg
+  artifactKey: Guid(b5a3c2833b887ff4ea638058d2a9325c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f002_t002_Utility_002.jpg using Guid(b5a3c2833b887ff4ea638058d2a9325c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65d9b5271fc83af320fc24a7dd6b055b') in 0.009535 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Dzer/models/u_f002_t004_Residential_000.jpg
+  artifactKey: Guid(ac12b0e94f1f05045b14ec72c8b8340c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f002_t004_Residential_000.jpg using Guid(ac12b0e94f1f05045b14ec72c8b8340c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7229b91ecf824ddd10d0d0dfd6f684c2') in 0.009978 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Dzer/models/u_f004_t005_Public_000.jpg
+  artifactKey: Guid(8fe26223557462b49ab8ed922146c5a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f004_t005_Public_000.jpg using Guid(8fe26223557462b49ab8ed922146c5a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8a55b4b55b663bc6d29277ad1a490c5') in 0.010374 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Dzer/models/u_f004_t003_Residential_000.jpg
+  artifactKey: Guid(c97fdd35392a6ff4c930969bd56d29c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f004_t003_Residential_000.jpg using Guid(c97fdd35392a6ff4c930969bd56d29c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b16db211a2e6101ea28f40d911579292') in 0.009628 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Dzer/models/u_f007_t004_Residential_001.jpg
+  artifactKey: Guid(2f17c6887417f9a49b0cfe657b11e6ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f007_t004_Residential_001.jpg using Guid(2f17c6887417f9a49b0cfe657b11e6ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71e9ba8c225c0066ca07e10d147fbd50') in 0.009986 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Dzer/models/u_f008_t008_Residential_000.jpg
+  artifactKey: Guid(07f3523ffa8d862489f36e0285b2dd6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f008_t008_Residential_000.jpg using Guid(07f3523ffa8d862489f36e0285b2dd6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc98f6229689ce36893ed662975fb5bc') in 0.010645 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Dzer/models/u_f009_t004_Educational_000.jpg
+  artifactKey: Guid(abfa68120c286fe4d878da007433f887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f009_t004_Educational_000.jpg using Guid(abfa68120c286fe4d878da007433f887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26e2899d68be9ad693a017e7dbd23ec3') in 0.008983 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Dzer/models/u_f005_t005_Other_001.jpg
+  artifactKey: Guid(6ff0fddcc748c074c877cf25b0f67f8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f005_t005_Other_001.jpg using Guid(6ff0fddcc748c074c877cf25b0f67f8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd240cc8409dc27a402d3c98a322def9a') in 0.010442 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Dzer/models/u_f008_t008_Residential_001.jpg
+  artifactKey: Guid(6f272b6217801084f9b9d26706ea3450) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f008_t008_Residential_001.jpg using Guid(6f272b6217801084f9b9d26706ea3450) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb2dd71ef3a0733614752c723c33ea89') in 0.009947 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Dzer/models/u_f008_t006_Public_000.jpg
+  artifactKey: Guid(768ed399e863e1d4487e7c39ae409df1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f008_t006_Public_000.jpg using Guid(768ed399e863e1d4487e7c39ae409df1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4354fced50e639870c799a5701643b96') in 0.010030 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Dzer/models/u_f009_t008_Industry_000.jpg
+  artifactKey: Guid(f2c2a4ec373ca5a40bae6ebb9f699912) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f009_t008_Industry_000.jpg using Guid(f2c2a4ec373ca5a40bae6ebb9f699912) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8363e8dcb33f467046eeeb71b0b2da4') in 0.010556 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Dzer/models/u_f002_t002_Residential_009.jpg
+  artifactKey: Guid(69aeaac4184fd204e803c6ddfab9ff4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f002_t002_Residential_009.jpg using Guid(69aeaac4184fd204e803c6ddfab9ff4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ba2263f8fbe767c41fa01908d519d0e') in 0.010022 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Dzer/models/u_f003_t001_Residential_000.jpg
+  artifactKey: Guid(cf5ffec9a28dff046ac8b65fa25eb656) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f003_t001_Residential_000.jpg using Guid(cf5ffec9a28dff046ac8b65fa25eb656) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11346df19037cff119143dbb4dcf60b5') in 0.009609 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Dzer/models/u_f002_t004_Residential_003.jpg
+  artifactKey: Guid(e9828b6882652d340917d585818020a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f002_t004_Residential_003.jpg using Guid(e9828b6882652d340917d585818020a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a32521506e2ddf8d5e008c101643e50') in 0.010009 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Dzer/models/u_f009_t005_Industry_000.jpg
+  artifactKey: Guid(b5e755d015b1bfe4ca3f6a68730aa156) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f009_t005_Industry_000.jpg using Guid(b5e755d015b1bfe4ca3f6a68730aa156) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '351bfe06375fc577d8708eb4e6988d61') in 0.009129 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Dzer/models/u_f004_t006_Residential_010.jpg
+  artifactKey: Guid(8aecf7d9e1ce38d4ca7ecaa4fa0a92ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f004_t006_Residential_010.jpg using Guid(8aecf7d9e1ce38d4ca7ecaa4fa0a92ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edcbdd35b2c99e9fbcbe56a2078d4ea2') in 0.009778 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.122096 seconds.
+  path: Assets/Dzer/models/u_f010_t006_Residential_000.jpg
+  artifactKey: Guid(3175d2d16af1fad49849884af4d8970b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f010_t006_Residential_000.jpg using Guid(3175d2d16af1fad49849884af4d8970b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6af02dcce1a7096198a206c91cf6d26d') in 0.009928 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Dzer/models/u_f011_t010_Residential_000.jpg
+  artifactKey: Guid(6382584700f9f2549905197391e7c3e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f011_t010_Residential_000.jpg using Guid(6382584700f9f2549905197391e7c3e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5aa853395faf78c406823dcaecc5511c') in 0.010597 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Dzer/models/u_f014_t012_Residential_000.jpg
+  artifactKey: Guid(19c5fc3c0fca9a24fafec2635c41c332) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f014_t012_Residential_000.jpg using Guid(19c5fc3c0fca9a24fafec2635c41c332) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f2ba17ceba29b2df8be63eed3e57ada') in 0.010169 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Dzer/models/u_f016_t004_Office_000.jpg
+  artifactKey: Guid(405768b73c4b1fc47b0f18c9560681fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f016_t004_Office_000.jpg using Guid(405768b73c4b1fc47b0f18c9560681fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3a0b160528eac8114ae1abc7f809bf4') in 0.010482 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Dzer/models/u_f012_t006_Office_000.jpg
+  artifactKey: Guid(7d5aa0f6d217e844b90f51ce8c630ed8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f012_t006_Office_000.jpg using Guid(7d5aa0f6d217e844b90f51ce8c630ed8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3334ced526641dbe644f2ff36fefd9db') in 0.010625 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Dzer/models/u_f014_t052_Residential_000.jpg
+  artifactKey: Guid(95290abf72a1d4245a56f18f10947d9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f014_t052_Residential_000.jpg using Guid(95290abf72a1d4245a56f18f10947d9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e631fce00bb4d3f67c0de62628d6dc78') in 0.010754 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Dzer/models/u_f011_t005_Residential_000.jpg
+  artifactKey: Guid(7113ac5d74dee1b4894bee9522f0d1a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dzer/models/u_f011_t005_Residential_000.jpg using Guid(7113ac5d74dee1b4894bee9522f0d1a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e9c817f78ba9734f1fb5cdebafcb2fa') in 0.009557 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 3.570464 seconds.
+  path: Assets/Materials/chrome.mat
+  artifactKey: Guid(7c5e18b0530493a49ac85eac667aea46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/chrome.mat using Guid(7c5e18b0530493a49ac85eac667aea46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e30d9c682f4de4b27d9af92b126287dc') in 0.011075 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: �������� �����/������ ���� �������� ��-�� ���������� ������ ������ ��� �� ������� ����������.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
