@@ -40,9 +40,21 @@ public class Scores_To_Text : MonoBehaviour
             scoresText.text = "Очки: " + lastScores;
         }*/
 
-        scoresText.text = "Очки: " + Penalty.GetScores();
+        if (lastScores != Penalty.GetScores() && !visualSubScores.GetComponent<Text>().enabled)
+        {
+            Debug.Log("Zachel");
+            lastScores = Penalty.GetScores();
+            scoresText.text = "Очки: " + lastScores;
+            StartCoroutine(MoveText());
+        }
     }
 
+    IEnumerator MoveText()
+    {
+        visualSubScores.GetComponent<Text>().enabled = true;
+        yield return new WaitForSeconds(1.0f);
+        visualSubScores.GetComponent<Text>().enabled = false;
+    }
 
     private IEnumerator MovingSubstraction()
     {

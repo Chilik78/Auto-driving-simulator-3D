@@ -15,7 +15,7 @@ C:/Users/dchel/OneDrive/Рабочий стол/Проекты/Auto-driving-simu
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53479
+54206
 Successfully changed project path to: C:/Users/dchel/OneDrive/Рабочий стол/Проекты/Auto-driving-simulator-3D/ADS
 C:/Users/dchel/OneDrive/Рабочий стол/Проекты/Auto-driving-simulator-3D/ADS
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,11 +49,11 @@ C:/Users/dchel/OneDrive/Рабочий стол/Проекты/Auto-driving-simu
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [40548] Host "[IP] 26.198.185.17 [Port] 0 [Flags] 2 [Guid] 767101084 [EditorId] 767101084 [Version] 1048832 [Id] WindowsEditor(7,DCmen) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [14432] Host "[IP] 26.198.185.17 [Port] 0 [Flags] 2 [Guid] 3513203796 [EditorId] 3513203796 [Version] 1048832 [Id] WindowsEditor(7,DCmen) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [40548] Host "[IP] 26.198.185.17 [Port] 0 [Flags] 2 [Guid] 767101084 [EditorId] 767101084 [Version] 1048832 [Id] WindowsEditor(7,DCmen) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [14432] Host "[IP] 26.198.185.17 [Port] 0 [Flags] 2 [Guid] 3513203796 [EditorId] 3513203796 [Version] 1048832 [Id] WindowsEditor(7,DCmen) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 19.72 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 11.97 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.4f1 (35713cd46cd7)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/Resources/UnitySubsystems
@@ -69,46 +69,46 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56204
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56816
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.025816 seconds.
-- Loaded All Assemblies, in  0.587 seconds
+Registered in 0.015356 seconds.
+- Loaded All Assemblies, in  0.523 seconds
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.452 seconds
-Domain Reload Profiling: 1033ms
-	BeginReloadAssembly (149ms)
+- Finished resetting the current domain, in  0.398 seconds
+Domain Reload Profiling: 918ms
+	BeginReloadAssembly (132ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (57ms)
+	RebuildCommonClasses (50ms)
 	RebuildNativeTypeToScriptingClass (18ms)
-	initialDomainReloadingComplete (116ms)
-	LoadAllAssembliesAndSetupDomain (241ms)
-		LoadAssemblies (144ms)
+	initialDomainReloadingComplete (85ms)
+	LoadAllAssembliesAndSetupDomain (235ms)
+		LoadAssemblies (128ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (226ms)
-			TypeCache.Refresh (225ms)
-				TypeCache.ScanAssembly (206ms)
-			ScanForSourceGeneratedMonoScriptInfo (1ms)
+		AnalyzeDomain (222ms)
+			TypeCache.Refresh (221ms)
+				TypeCache.ScanAssembly (202ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (452ms)
+	FinalizeReload (399ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (355ms)
+		SetupLoadedEditorAssemblies (313ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (18ms)
-			SetLoadedEditorAssemblies (12ms)
+			SetLoadedEditorAssemblies (7ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (3ms)
-			ProcessInitializeOnLoadAttributes (241ms)
-			ProcessInitializeOnLoadMethodAttributes (81ms)
+			ProcessInitializeOnLoadAttributes (214ms)
+			ProcessInitializeOnLoadMethodAttributes (70ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -118,52 +118,52 @@ Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\dchel\OneDrive\Рабочий стол\Проекты\Auto-driving-simulator-3D\ADS\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\dchel\OneDrive\Рабочий стол\Проекты\Auto-driving-simulator-3D\ADS\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  1.324 seconds
-Refreshing native plugins compatible for Editor in 6.60 ms, found 3 plugins.
+- Loaded All Assemblies, in  1.236 seconds
+Refreshing native plugins compatible for Editor in 6.64 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.733 seconds
-Domain Reload Profiling: 2049ms
-	BeginReloadAssembly (224ms)
+- Finished resetting the current domain, in  0.800 seconds
+Domain Reload Profiling: 2029ms
+	BeginReloadAssembly (228ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (8ms)
 		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (33ms)
-	RebuildCommonClasses (65ms)
-	RebuildNativeTypeToScriptingClass (20ms)
-	initialDomainReloadingComplete (82ms)
-	LoadAllAssembliesAndSetupDomain (926ms)
-		LoadAssemblies (512ms)
+		ReleaseScriptingObjects (1ms)
+		CreateAndSetChildDomain (32ms)
+	RebuildCommonClasses (59ms)
+	RebuildNativeTypeToScriptingClass (18ms)
+	initialDomainReloadingComplete (68ms)
+	LoadAllAssembliesAndSetupDomain (856ms)
+		LoadAssemblies (480ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (523ms)
-			TypeCache.Refresh (484ms)
-				TypeCache.ScanAssembly (466ms)
-			ScanForSourceGeneratedMonoScriptInfo (29ms)
-			ResolveRequiredComponents (9ms)
-	FinalizeReload (733ms)
+		AnalyzeDomain (495ms)
+			TypeCache.Refresh (466ms)
+				TypeCache.ScanAssembly (449ms)
+			ScanForSourceGeneratedMonoScriptInfo (21ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (800ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (509ms)
+		SetupLoadedEditorAssemblies (551ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (14ms)
-			SetLoadedEditorAssemblies (7ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (92ms)
-			ProcessInitializeOnLoadAttributes (357ms)
-			ProcessInitializeOnLoadMethodAttributes (24ms)
-			AfterProcessingInitializeOnLoad (14ms)
+			BeforeProcessingInitializeOnLoad (96ms)
+			ProcessInitializeOnLoadAttributes (400ms)
+			ProcessInitializeOnLoadMethodAttributes (29ms)
+			AfterProcessingInitializeOnLoad (10ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (10ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 6.55 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (9ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 5.59 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3171 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 31 unused Assets / (56.5 KB). Loaded Objects now: 3636.
 Memory consumption went from 124.7 MB to 124.7 MB.
-Total: 4.100700 ms (FindLiveObjects: 0.432200 ms CreateObjectMapping: 0.231300 ms MarkObjects: 3.307500 ms  DeleteObjects: 0.127300 ms)
+Total: 3.146300 ms (FindLiveObjects: 0.306600 ms CreateObjectMapping: 0.096400 ms MarkObjects: 2.617900 ms  DeleteObjects: 0.122900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -179,20 +179,140 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 44288.716527 seconds.
-  path: Assets/Prefabs/зебра.prefab
-  artifactKey: Guid(f66a6a7d635b38d4f8a18965cd3b6c3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/зебра.prefab using Guid(f66a6a7d635b38d4f8a18965cd3b6c3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1503bd2ba765dd36f51a510c5f666c80') in 0.185526 seconds
+  Time since last request: 84265.086538 seconds.
+  path: Assets/Prefabs/Audi10 1.prefab
+  artifactKey: Guid(8c84759512f6a934fa991535725d7d09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Audi10 1.prefab using Guid(8c84759512f6a934fa991535725d7d09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '877725ab5c7aac8d9824d8b52041f2e6') in 0.148275 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 191
+Number of asset objects unloaded after import = 140
+========================================================================
+Received Import Request.
+  Time since last request: 218.375291 seconds.
+  path: Assets/Models/Главная дорога.png
+  artifactKey: Guid(33cd8ea66e48e954f99957fa3369f72d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Главная дорога.png using Guid(33cd8ea66e48e954f99957fa3369f72d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb831e944ab7a542fd3063c2f7ad2f03') in 0.025615 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.006556 seconds.
+  path: Assets/Models/ДвижениеНаправоИлиНалево.png
+  artifactKey: Guid(131e2a8767dd94f47919953d6ce9cb19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ДвижениеНаправоИлиНалево.png using Guid(131e2a8767dd94f47919953d6ce9cb19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5fdc22549c66979d08e898a6cdf76ad') in 0.022826 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/Models/ЗнакДвижениеНаправо.fbx
+  artifactKey: Guid(c0e1369e26f64324cbb6e8f67ea31e89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ЗнакДвижениеНаправо.fbx using Guid(c0e1369e26f64324cbb6e8f67ea31e89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb69c17b443f07b79364f9b8624ba872') in 0.094767 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Models/ЗнакДвижениеНаправоИлиНалево.fbx
+  artifactKey: Guid(3d21c01f8a8fdcd42a83fafcb8fd80ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ЗнакДвижениеНаправоИлиНалево.fbx using Guid(3d21c01f8a8fdcd42a83fafcb8fd80ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd29d95fd8e609e5e336de852926f6730') in 0.041131 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Models/ЗнакДвижениеПрямоИлиНаправо.fbx
+  artifactKey: Guid(59bb466a253637c4bbaf7d230a140467) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ЗнакДвижениеПрямоИлиНаправо.fbx using Guid(59bb466a253637c4bbaf7d230a140467) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6278424edae7e0389ceaadf57e1a4032') in 0.041189 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Models/ЗнакПешеходныйПереход.fbx
+  artifactKey: Guid(440d9aa34fa13b94ba7d3ad2f6fd3472) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ЗнакПешеходныйПереход.fbx using Guid(440d9aa34fa13b94ba7d3ad2f6fd3472) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c179730a414c27697662fa6447a7e50') in 0.038235 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Models/ЗнакДвижениеПрямо.fbx
+  artifactKey: Guid(0df7321bd4ce80a4b89354f2a3fdc41a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ЗнакДвижениеПрямо.fbx using Guid(0df7321bd4ce80a4b89354f2a3fdc41a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbe9b86719dafdc05fd48827c8eee20d') in 0.038564 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Models/ДвижениеПрямоИлиНалево.png
+  artifactKey: Guid(bfd5e6546a719334c848cf06394fac74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ДвижениеПрямоИлиНалево.png using Guid(bfd5e6546a719334c848cf06394fac74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b474d00d47ae05904c9696ce78bace30') in 0.011784 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Models/ЗнакСтоп 1.fbx
+  artifactKey: Guid(e83516ac9588c8e4d8a16e7e96b5a13b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ЗнакСтоп 1.fbx using Guid(e83516ac9588c8e4d8a16e7e96b5a13b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8308a13d93f483587b062db9f24d2981') in 0.038449 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000098 seconds.
+  path: Assets/Models/Кирпич.png
+  artifactKey: Guid(d8e5e343e27b3f349b14f55fc4113279) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Кирпич.png using Guid(d8e5e343e27b3f349b14f55fc4113279) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '250ac40bdae326532b3fb68cbcf1e4cc') in 0.010276 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Models/ДвижениеНаправо.jpg
+  artifactKey: Guid(8f1265a11e0a50e4d85db633775021ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ДвижениеНаправо.jpg using Guid(8f1265a11e0a50e4d85db633775021ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e06f0c8dc46244684f8f9d82516ad2d8') in 0.013659 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Models/ЗнакДвижениеНалево.fbx
+  artifactKey: Guid(4830f4788e6ae7e4399dced270df59ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ЗнакДвижениеНалево.fbx using Guid(4830f4788e6ae7e4399dced270df59ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd364c7a085ba1915b7212408aa281c74') in 0.042635 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Models/ЗнакСтопНаБеломФоне.png
+  artifactKey: Guid(3ab751797c6409b4cb04aaba42776674) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ЗнакСтопНаБеломФоне.png using Guid(3ab751797c6409b4cb04aaba42776674) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd27e88f27fb696be670f17d67016eaba') in 0.010546 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Models/УступиДорогу.png
+  artifactKey: Guid(5b9206607611c4c4db969cc5a59faf01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/УступиДорогу.png using Guid(5b9206607611c4c4db969cc5a59faf01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c4a09a92c2e5f7019179bce9999cca4') in 0.010345 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Models/ЗнакУступиДорогу.fbx
+  artifactKey: Guid(99ef40dc31487234d82aa8b2948242d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ЗнакУступиДорогу.fbx using Guid(99ef40dc31487234d82aa8b2948242d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e22c3fad550098a5bd0b55ef593ac721') in 0.035406 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
 ========================================================================
 Received Prepare
-Refreshing native plugins compatible for Editor in 9.16 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 8.31 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 1 unused Assets / (0.8 KB). Loaded Objects now: 3646.
-Memory consumption went from 76.2 MB to 76.2 MB.
-Total: 4.417900 ms (FindLiveObjects: 0.339200 ms CreateObjectMapping: 0.130700 ms MarkObjects: 3.917600 ms  DeleteObjects: 0.029100 ms)
+Unloading 1 unused Assets / (0.8 KB). Loaded Objects now: 3683.
+Memory consumption went from 76.7 MB to 76.7 MB.
+Total: 6.282400 ms (FindLiveObjects: 0.473800 ms CreateObjectMapping: 0.219100 ms MarkObjects: 5.558700 ms  DeleteObjects: 0.028600 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -208,3 +328,187 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 31.853106 seconds.
+  path: Assets/Models/Icons/ЗнакДвижениеНалево.fbx
+  artifactKey: Guid(4830f4788e6ae7e4399dced270df59ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Icons/ЗнакДвижениеНалево.fbx using Guid(4830f4788e6ae7e4399dced270df59ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83bb777a091c41705783d88ba05c5d3e') in 0.043289 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Models/Icons/СтопНаБеломФоне.fbx
+  artifactKey: Guid(68f552ffa32ce73469890c688e2eaa00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Icons/СтопНаБеломФоне.fbx using Guid(68f552ffa32ce73469890c688e2eaa00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9a4ba488de32a8f738b1a1ff046587a') in 0.039782 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Models/Icons/ЗнакПешеходныйПереход.fbx
+  artifactKey: Guid(440d9aa34fa13b94ba7d3ad2f6fd3472) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Icons/ЗнакПешеходныйПереход.fbx using Guid(440d9aa34fa13b94ba7d3ad2f6fd3472) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efe69f9f244c85575566fcd43982c211') in 0.037174 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Models/Icons/ЗнакСтоп 1.fbx
+  artifactKey: Guid(e83516ac9588c8e4d8a16e7e96b5a13b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Icons/ЗнакСтоп 1.fbx using Guid(e83516ac9588c8e4d8a16e7e96b5a13b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43df6f375355abd65ff151e9b7879520') in 0.035847 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Models/Icons/ЗнакДвижениеПрямоИлиНалево.fbx
+  artifactKey: Guid(4858af5be3be7ec448cbd576c9d2e513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Icons/ЗнакДвижениеПрямоИлиНалево.fbx using Guid(4858af5be3be7ec448cbd576c9d2e513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '722cf7db3891bb902da11fc4c9203271') in 0.049548 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 16.773985 seconds.
+  path: Assets/Prefabs/Player/Icarus.prefab
+  artifactKey: Guid(49ef0219a3b7df448a5c62dfee801b70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Player/Icarus.prefab using Guid(49ef0219a3b7df448a5c62dfee801b70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '541d31906796c88f26cbf65b96438b84') in 0.027144 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 133
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\dchel\OneDrive\Рабочий стол\Проекты\Auto-driving-simulator-3D\ADS\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\dchel\OneDrive\Рабочий стол\Проекты\Auto-driving-simulator-3D\ADS\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  1.398 seconds
+Refreshing native plugins compatible for Editor in 7.52 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.512 seconds
+Domain Reload Profiling: 2900ms
+	BeginReloadAssembly (238ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (64ms)
+	RebuildCommonClasses (57ms)
+	RebuildNativeTypeToScriptingClass (18ms)
+	initialDomainReloadingComplete (60ms)
+	LoadAllAssembliesAndSetupDomain (1014ms)
+		LoadAssemblies (631ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (484ms)
+			TypeCache.Refresh (476ms)
+				TypeCache.ScanAssembly (460ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (8ms)
+	FinalizeReload (1513ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (455ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (7ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (105ms)
+			ProcessInitializeOnLoadAttributes (292ms)
+			ProcessInitializeOnLoadMethodAttributes (23ms)
+			AfterProcessingInitializeOnLoad (14ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
+Refreshing native plugins compatible for Editor in 7.16 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3150 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 22 unused Assets / (30.7 KB). Loaded Objects now: 3685.
+Memory consumption went from 122.6 MB to 122.6 MB.
+Total: 3.114600 ms (FindLiveObjects: 0.412000 ms CreateObjectMapping: 0.124100 ms MarkObjects: 2.516400 ms  DeleteObjects: 0.060600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\dchel\OneDrive\Рабочий стол\Проекты\Auto-driving-simulator-3D\ADS\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\dchel\OneDrive\Рабочий стол\Проекты\Auto-driving-simulator-3D\ADS\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  1.262 seconds
+Refreshing native plugins compatible for Editor in 8.66 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.321 seconds
+Domain Reload Profiling: 2575ms
+	BeginReloadAssembly (231ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (53ms)
+	RebuildCommonClasses (58ms)
+	RebuildNativeTypeToScriptingClass (19ms)
+	initialDomainReloadingComplete (59ms)
+	LoadAllAssembliesAndSetupDomain (886ms)
+		LoadAssemblies (492ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (495ms)
+			TypeCache.Refresh (484ms)
+				TypeCache.ScanAssembly (466ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1321ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (450ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (15ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (95ms)
+			ProcessInitializeOnLoadAttributes (297ms)
+			ProcessInitializeOnLoadMethodAttributes (25ms)
+			AfterProcessingInitializeOnLoad (12ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Refreshing native plugins compatible for Editor in 7.42 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3151 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 22 unused Assets / (30.6 KB). Loaded Objects now: 3688.
+Memory consumption went from 122.8 MB to 122.8 MB.
+Total: 4.155400 ms (FindLiveObjects: 0.394700 ms CreateObjectMapping: 0.158500 ms MarkObjects: 3.532300 ms  DeleteObjects: 0.067600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
