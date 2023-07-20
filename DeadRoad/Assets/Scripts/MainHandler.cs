@@ -196,7 +196,7 @@ public class MainHandler : MonoBehaviour
         for (int i = 0; i < carsUnity.Count; i++)
         {
             var car = carsUnity[i];
-            CarInfo carInfo = CarsInfo[i];
+            CarInfo carInfo = CarsInfo.Where(x => x.vehid == car.name).First();
 
             if (carInfo is null) continue;
  
