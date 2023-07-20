@@ -18,14 +18,14 @@ namespace Main
         public bool connected;
 
         /// <summary>
-        /// Конструктор SUMO
+        /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ SUMO
         /// </summary>
         /// <param name="port"></param>
         /// <param name="host"></param>
         /// <param name="step_length"></param>
         public SUMO(int port, string SimPath, float step_length = 0.02f, string host = "localhost")
         {
-            string sumoBinary = System.Environment.GetEnvironmentVariable("SUMO_HOME") + @"\bin\sumo-gui";
+            string sumoBinary = '\"' + System.Environment.GetEnvironmentVariable("SUMO_HOME") + @"\bin\sumo-gui" + '\"';
             string FolderPath = @"Assets\SUMO_Networks\";
 
             string map = SimPath.Contains(".sumocfg") ? SimPath : SimPath + ".sumocfg";
@@ -49,7 +49,7 @@ namespace Main
         }
 
         /// <summary>
-        /// Подключение к traci 
+        /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ traci 
         /// </summary>
         public void StartSimulation(string playerId, List<string> ids)
         {
@@ -75,7 +75,7 @@ namespace Main
         }
 
         /// <summary>
-        /// Изменение зума по виду
+        /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ
         /// </summary>
         /// <param name="degree"></param>
         public void ChangeZoom(int degree, string view = "View #0")
@@ -84,7 +84,7 @@ namespace Main
         }
 
         /// <summary>
-        /// Прикрепление трекинга в сумо
+        /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ
         /// </summary>
         /// <param name="carid"></param>
         /// <param name="view"></param>
@@ -94,7 +94,7 @@ namespace Main
         }
 
         /// <summary>
-        /// Телепортирование машины в симуляции на начальную точку
+        /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         /// </summary>
         /// <param name="carid"></param>
         public void TeleportSimBodyToStartPosition(string carid, Vector3 position, Quaternion rotation)
@@ -106,7 +106,7 @@ namespace Main
         }
 
         /// <summary>
-        /// Телепортирование модели игрока на позиции, как в симуляции
+        /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         /// </summary>
         /// <param name="player"></param>
         /// <param name="carid"></param>
@@ -119,7 +119,7 @@ namespace Main
         }
 
         /// <summary>
-        /// Обновление данных в симуляции по движению модели в игре
+        /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ
         /// </summary>
         /// <param name="id"></param>
         /// <param name="carTransform"></param>
@@ -135,7 +135,7 @@ namespace Main
         }
 
         /// <summary>
-        /// Шаг симуляции
+        /// пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         /// </summary>
         public void DoStep()
         {
@@ -143,14 +143,14 @@ namespace Main
         }
 
         /// <summary>
-        /// Функция возвращает список информации о новых машинах
+        /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         /// </summary>
         /// <returns></returns>
         public List<CarInfo> GetNewCarInfos()
         {
             List<CarInfo> newcars = new List<CarInfo>();
             var newvehicles = client.Simulation.GetDepartedIDList("0").Content;
-            Debug.Log($"Прибыло: {newvehicles.Count}");
+            Debug.Log($"пїЅпїЅпїЅпїЅпїЅпїЅпїЅ: {newvehicles.Count}");
 
             foreach (string id in newvehicles)
             {
@@ -160,14 +160,14 @@ namespace Main
         }
 
         /// <summary>
-        /// Функция возвращает список информации о выбывших машинах
+        /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         /// </summary>
         /// <returns></returns>
         public List<CarInfo> GetLeftCarInfos()
         {
             List<CarInfo> leftcars = new List<CarInfo>();
             var vehiclesleft = client.Simulation.GetArrivedIDList("0").Content;
-            Debug.Log($"Убыло: {vehiclesleft.Count}");
+            Debug.Log($"пїЅпїЅпїЅпїЅпїЅ: {vehiclesleft.Count}");
 
             foreach (string id in vehiclesleft)
             {
@@ -177,7 +177,7 @@ namespace Main
         }
 
         /// <summary>
-        /// Функция возвращает два списка информации о новых машинах и выбывших машинах
+        /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         /// </summary>
         /// <returns></returns>
         public (List<CarInfo>, List<CarInfo>) GetNewAndLeftCarInfos()
@@ -186,7 +186,7 @@ namespace Main
         }
 
         /// <summary>
-        /// Функция возвращает два списка информации о нынишных машинах и машинах на удаление
+        /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         /// </summary>
         public List<CarInfo> GetCarInfos()
         {
@@ -199,7 +199,7 @@ namespace Main
         }
 
         /// <summary>
-        /// Функция возвращает объект информации о машине
+        /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         /// </summary>
         /// <param name="id"></param>
         private CarInfo withIdGetCarInfo(string id)
@@ -216,7 +216,7 @@ namespace Main
         }
 
         /// <summary>
-        /// Функция возвращает список информации о светофорах
+        /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         /// </summary>
         public List<LightInfo> GetLigthInfos()
         {
@@ -248,7 +248,7 @@ namespace Main
         }
 
         /// <summary>
-        /// Получает фазы на перекрёсток в формате строки
+        /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         /// </summary>
         public List<string> GetTLSPhases()
         {
@@ -263,7 +263,7 @@ namespace Main
         }
 
         /// <summary>
-        /// Возвращает фазы, скленные в одну строку
+        /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         /// </summary>
         /// <returns></returns>
         public string GetTLSPhasesStr()
