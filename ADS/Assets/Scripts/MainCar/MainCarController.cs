@@ -112,7 +112,7 @@ public class MainCarController : MonoBehaviour
     }
 
     /// <summary>
-    /// Функция получния скорости автомобиля
+    /// Функция получения скорости автомобиля
     /// </summary>
     /// <returns></returns>
     public static float GetSpeed()
