@@ -25,11 +25,55 @@ public class MainCarController : MonoBehaviour
     [Header("Максимальный угол поворота колес")]
     public float maxSteeringAngle; // Максимальный угол поворота колес
 
+    [Header("Значение тормозов")]
+    public float brakes; // Значение тормозов
+
+    public void FixedUpdate()
+    {
+        float motor = maxMotorTorque * Input.GetAxis("Vertical");
+        float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+
+        foreach (AxleInfo axleInfo in axleInfos)
+        {
+            if (axleInfo.steering)
+            {
+                axleInfo.leftWheel.steerAngle = steering;
+                axleInfo.rightWheel.steerAngle = steering;
+            }
+
+            if (axleInfo.motor)
+            {
+                axleInfo.leftWheel.motorTorque = motor;
+                axleInfo.rightWheel.motorTorque = motor;
+            }
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                axleInfo.leftWheel.brakeTorque = brakes;
+                axleInfo.rightWheel.brakeTorque = brakes;
+            }
+            else
+            {
+                axleInfo.leftWheel.brakeTorque = 0;
+                axleInfo.rightWheel.brakeTorque = 0;
+            }
+
+            ApplyLocalPositionToVisuals(axleInfo.leftWheel);
+            ApplyLocalPositionToVisuals(axleInfo.rightWheel);
+        }
+    }
+
+    private void Update()
+    {
+        CalculateSpeed();
+        DestroyCar();
+    }
+
     /// <summary>
     /// Функция находит визуальную часть колес и устанавливает новые координаты
     /// </summary>
     /// <param name="collider"></param>
-    private void ApplyLocalPositionToVisuals(WheelCollider collider)
+    private static void ApplyLocalPositionToVisuals(WheelCollider collider)
     {
         if (collider.transform.childCount == 0)
         {
@@ -45,36 +89,6 @@ public class MainCarController : MonoBehaviour
         visualWheel.transform.position = position;
         visualWheel.transform.position = position;
         visualWheel.transform.rotation = rotation;
-    }
-
-    public void FixedUpdate()
-    {
-        float motor = maxMotorTorque * Input.GetAxis("Vertical");
-        float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
-
-        foreach (AxleInfo axleInfo in axleInfos)
-        {
-            if (axleInfo.steering)
-            {
-                axleInfo.leftWheel.steerAngle = steering;
-                axleInfo.rightWheel.steerAngle = steering;
-            }
-            if (axleInfo.motor)
-            {
-                axleInfo.leftWheel.motorTorque = motor;
-                axleInfo.rightWheel.motorTorque = motor;
-            }
-
-            ApplyLocalPositionToVisuals(axleInfo.leftWheel);
-            ApplyLocalPositionToVisuals(axleInfo.rightWheel);     
-        }
-    }
-
-    
-    private void Update()
-    {
-        CalculateSpeed();
-        DestroyCar();
     }
 
     private static float speed;// Скорость машины

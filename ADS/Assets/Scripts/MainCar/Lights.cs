@@ -81,7 +81,7 @@ public class Lights : MonoBehaviour
             OnLights();
         }
 
-        if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && isLightsOn)// ”величение/уменьшение €ркости задних фар
+        if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.Space)) && isLightsOn)// ”величение/уменьшение €ркости задних фар
         {
             isMovingBack = true;
             BrightnessBackLights();
