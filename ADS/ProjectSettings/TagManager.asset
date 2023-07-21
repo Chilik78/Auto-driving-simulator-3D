@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Other cars
+  - Menu Camera
+  - Car Camera
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 [System.Serializable]
 public class AxleInfo
@@ -27,6 +28,8 @@ public class MainCarController : MonoBehaviour
 
     [Header("Значение тормозов")]
     public float brakes; // Значение тормозов
+
+    private static int scores = 100;// Очки вождения
 
     public void FixedUpdate()
     {
@@ -119,9 +122,12 @@ public class MainCarController : MonoBehaviour
     /// </summary>
     private void DestroyCar()
     {
-        if(Penalty.GetScores() <= 0)
+        if(scores <= 0)
         {
             Destroy(gameObject);
+            MenuScripts.SwitchOnCameraMenu();
+            scores = 100;
+            GameObject.FindWithTag("Car Camera").SetActive(false);
         }
     }
 
@@ -132,5 +138,44 @@ public class MainCarController : MonoBehaviour
     public static float GetSpeed()
     {
         return speed;
+    }
+
+    private static bool isStartCoroutine = false;
+    /// <summary>
+    /// Функция вычета очков в зависимости от индекса нарушения
+    /// </summary>
+    /// <param name="indexPenalty"></param>
+    /// <returns></returns>
+    public static IEnumerator SubtractionScores(int indexPenalty)
+    {
+        isStartCoroutine = true;
+
+        yield return new WaitForSeconds(0.5f);
+
+        switch (indexPenalty)
+        {
+            case 0: scores -= 30; break;
+            case 1: scores -= 10; break;
+        }
+
+        isStartCoroutine = false;
+    }
+
+    /// <summary>
+    /// Функция получения состояния карутина
+    /// </summary>
+    /// <returns></returns>
+    public static bool GetStateCoroutine()
+    {
+        return isStartCoroutine;
+    }
+
+    /// <summary>
+    /// Функция получения очков вождения
+    /// </summary>
+    /// <returns></returns>
+    public static int GetScores()
+    {
+        return scores;
     }
 }

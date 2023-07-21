@@ -67,6 +67,16 @@ namespace RootMotion
         private Vector3 lastUp;
         private float blockedDistance = 10f, blockedDistanceV;
 
+        private void OnEnable()
+        {
+            target = MenuScripts.GetTransformCar();
+        }
+
+        private void OnDisable()
+        {
+            target = null;
+        }
+
         public void SetAngles(Quaternion rotation)
         {
             Vector3 euler = rotation.eulerAngles;

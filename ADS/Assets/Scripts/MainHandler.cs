@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Linq;
 using Main;
 using System;
-using System.Threading;
+
 
 public class MainHandler : MonoBehaviour
 {
