@@ -1,11 +1,11 @@
-using System.Collections;
+using System;
 using UnityEngine;
 
 public class Penalty : MonoBehaviour
 {
     private void FixedUpdate()
     {
-        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && MainCarController.GetSpeed() > 1 && !Lights.GetStatusLights())// Если двигаемся с выключенными фарами
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && Math.Abs(MainCarController.GetSpeed()) > 1 && !Lights.GetStatusLights())// Если двигаемся с выключенными фарами
         {
             CarLightsOff();
         }
