@@ -4,6 +4,7 @@ using System.Linq;
 using Main;
 using System;
 using System.Threading;
+using System.IO;
 
 public class MainHandler : MonoBehaviour
 {
@@ -25,19 +26,19 @@ public class MainHandler : MonoBehaviour
 
     [Header("Светофор")]
     public GameObject LightObject;
-    public float createPosY;
 
     [Header("Одна модель для отладки")]
     public GameObject allVeh;
     public bool isDebug;
 
     private List<GameObject> carsUnity = new List<GameObject>(); //Все машины на карте
-    private List<GameObject> lightsUnity = new List<GameObject>(); //Все светофоры на карте
+    private List<TLSCross> TLSCrosses = new List<TLSCross>(); //Все светофоры на карте
+    private List<MeshRenderer[]> Renders = new List<MeshRenderer[]>();
     private GameObject parentCars; //Папка для групировки
     private GameObject parentLights; //Папка для групировки
 
     private SUMO sumo; //Объект симуляции
-
+    private List<string> ids;
     //Если хочется передвинуть машину в симуляции в какую-либо точку
     //И использовать sumo.TeleportSimBodyToStartPosition(id, position, rotation)
     [Header("Точка спавна машины в симуляции")]
@@ -55,8 +56,10 @@ public class MainHandler : MonoBehaviour
             player = GameObject.Find("player");
 
         sumo.TeleportSimBodyToStartPosition(CarId, position, rotation);
-       // sumo.TeleportPlayerToStartPosition(player, CarId);
-
+        // sumo.TeleportPlayerToStartPosition(player, CarId);
+        ids = getTrafficLightsId();
+        foreach (string id in ids) TLSCrosses.Add(new TLSCross(id));
+        foreach (TLSCross cross in TLSCrosses) Renders.AddRange(cross.GetAllRenders());
         Debug.Log("Должно работать.");
         Debug.Log(CarId);
         Debug.Log(CarIds.First()); 
@@ -89,8 +92,8 @@ public class MainHandler : MonoBehaviour
         }; //Если нет машин, то создаём
 
         //Та же логика со светофорами
-        if(lightsUnity.Count > 0) UpdateLights();
-        else CreateAllLights(sumo.GetLigthInfos());
+        UpdateLights();
+        //else CreateAllLights(sumo.GetLigthInfos());
     }
 
     /// <summary>
@@ -109,36 +112,7 @@ public class MainHandler : MonoBehaviour
         sumo.TeleportPlayerToStartPosition(player, CarId);
         Debug.Log($"Игрок изменён на {ModelName} - {CarId}");
     }
-
-    /// <summary>
-    /// Функция создаёт светофор по её информации
-    /// </summary>
-    /// <param name="lightInfo"></param>
-    public void CreateLight(LightInfo lightInfo)
-    {
-        for(int i = 0; i < lightInfo.Lanes.Count; i++)
-        {
-            var light = Instantiate(LightObject, new Vector3(lightInfo.PosX[i], createPosY, lightInfo.PosY[i]), LightObject.transform.rotation);
-            light.transform.SetParent(parentLights.transform, false);
-            light.name = lightInfo.Lanes[i];
-            lightsUnity.Add(light);
-        }
-        
-    }
-
-    /// <summary>
-    /// Создаёт все светофоры по списку информации
-    /// </summary>
-    public void CreateAllLights(List<LightInfo> LightsInfo)
-    {
-        foreach (var lightInfo in LightsInfo)
-        {
-            CreateLight(lightInfo);
-        }
-
-        Debug.Log("Все светофороы созданы");
-    }
-
+    
     /// <summary>
     /// Функция создаёт все машины по списку информации
     /// </summary>
@@ -213,8 +187,10 @@ public class MainHandler : MonoBehaviour
         for (int i = 0; i < carsUnity.Count; i++)
         {
             var car = carsUnity[i];
-            CarInfo carInfo = CarsInfo.Where(x => x.vehid == car.name).First();
-
+            if (CarsInfo.Count < 1) return;
+            var  listc = CarsInfo.Where(x => x.vehid == car.name).ToList();
+            if (listc.Count < 1) continue;
+            CarInfo carInfo = listc.First();
             if (carInfo is null) continue;
  
             Vector3 tempPos = car.transform.position;               //Получаем текущую позицию
@@ -238,48 +214,99 @@ public class MainHandler : MonoBehaviour
     }
 
     /// <summary>
+    /// Функция вовзращает id каждого светофора в игре
+    /// </summary>
+    /// <returns></returns>
+    private List<string> getTrafficLightsId(int tlsCount = 6)
+    {
+        List<string> ids = new List<string>();
+        for (int i = 1; i <= tlsCount; i++)
+        {
+            GameObject obj = GameObject.Find($"TLC_{i}");
+            if (obj == null) continue;
+            ids.Add(obj.name);
+        }
+        return ids;
+    }
+
+    
+
+    /// <summary>
     /// Обновляет состояния всех светофоров по списку информации
     /// </summary>
-    /// <param name="LightsInfo"></param>
     public void UpdateLights()
     {
-        string phases = sumo.GetTLSPhasesStr();
-
-        for(int i = 0; i < lightsUnity.Count; i++)
+       
+       
+        List<string> phases = sumo.GetTLSPhases(ids);
+        string phases1 = string.Join("", phases);
+        int j = 0;
+        int g = 0;
+        int u = 0;
+        var render = Renders[j];
+        
+        for(int i = 0; i < phases1.Length; i++)
         {
-            var light = lightsUnity[i];
-
-            ChangeColorLight(light, phases[i]);
+            if (( render[0].name.Contains("Голова (12)")) && u < 2) //render[0].name.Contains("Голова (3)") ||
+            {
+                ChangeColorLight(render, phases1[i]);
+                u++;
+                if (u == 2)
+                {
+                    u = 0;
+                    j++;
+                    render = Renders[j];
+                }
+            }
+            else if (g < 3)
+            {
+                ChangeColorLight(render, phases1[i]);
+                g++;
+                if (g == 3)
+                {
+                    g = 0;
+                    j++;
+                    render = Renders[j];
+                }
+            }
         }
+        
         Debug.Log("Обновлены все состояния светофоров");
     }
     
     /// <summary>
     /// Меняет светофора по фазе
     /// </summary>
-    /// <param name="light"></param>
     /// <param name="phase"></param>
-    public void ChangeColorLight(GameObject light, char phase)
+    public void ChangeColorLight(MeshRenderer[] render, char phase)
     {
-        var lightRenderer = light.GetComponent<Renderer>();
+      
         Color color = Color.white;
         int code = 0;
-
         switch (char.ToLower(phase))
         {
-            case 'g': code = 1; break;
-            case 'y': code = 2; break;
-            case 'r': code = 3; break;
+            case 'g': color = Color.green; code = 1; break;
+            case 'y': color = Color.yellow; break;
+            case 'r': color = Color.red; code = 2; break;
         }
+      
 
-        switch(code)
+        for (int i = 0; i < 3; i++)
         {
-            case 1: color = Color.green; break;
-            case 2: color = Color.yellow; break;
-            case 3: color = Color.red; break;
+            if(i != code)
+            {
+                render[i].material.DisableKeyword("_EMISSION");
+                render[i].material.color = new Color(0.179f, 0.171f, 0.171f, 0.0039f);
+            }
+            else
+            {
+                render[i].material.EnableKeyword("_EMISSION");  
+                render[i].material.SetColor("_EmissionColor", color);
+                render[i].material.color = color;
+            }
+
         }
 
-        lightRenderer.material.SetColor("_Color", color);
     }
 }
 

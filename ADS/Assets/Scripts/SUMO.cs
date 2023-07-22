@@ -24,13 +24,14 @@ namespace Main
         /// <param name="step_length"></param>
         public SUMO(int port, string SimPath, float step_length = 0.02f, string host = "localhost")
         {
-            string sumoBinary = "\""+ "D:\\VSTU\\2 курс\\практика\\sumo-1.18.0\\bin\\sumo-gui" +"\"";
-            string FolderPath = @"Assets\SUMO_Networks\";  
+            /*string sumoBinary = '\"' + System.Environment.GetEnvironmentVariable("SUMO_HOME") + @"\bin\sumo-gui" + '\"';*/
+            string sumoBinary = '\"' + "D:\\VSTU\\2 курс\\практика\\sumo-1.18.0\\bin\\sumo-gui" + '\"';
+            string FolderPath = @"Assets\SUMO_Networks\";
 
             string map = SimPath.Contains(".sumocfg") ? SimPath : SimPath + ".sumocfg";
             map = map.Replace('/', '\\');
 
-            string[] commands = new string[11] { "/C", sumoBinary, "-G", "-c", FolderPath + map, "--start", "--quit-on-end", "--step-length", step_length.ToString().Replace(',', '.'), "--remote-port", port.ToString() };
+            string[] commands = new string[10] { "/C", sumoBinary, "-c", FolderPath + map, "--start", "--quit-on-end", "--step-length", step_length.ToString().Replace(',', '.'), "--remote-port", port.ToString() };
             string strCmdText = string.Join(' ', commands);
             Debug.Log(strCmdText);
 
@@ -215,46 +216,13 @@ namespace Main
         }
 
         /// <summary>
-        /// Функция возвращает список информации о светофорах
+        /// Получает фазы на перекрёсток в формате строки для списка светофоров
         /// </summary>
-        public List<LightInfo> GetLigthInfos()
+        public List<string> GetTLSPhases(List<string> LightIds)
         {
-            List<LightInfo> TrafficLights = new List<LightInfo>();
-            var TlsIDs = client.TrafficLight.GetIdList().Content;
-            foreach (var id in TlsIDs)
-            {
-                List<string> Lanes = client.TrafficLight.GetControlledLanes(id).Content;
-                List<float> LanesX = new List<float>();
-                List<float> LanesY = new List<float>();
-
-                foreach(var l in Lanes)
-                {
-                    var pos = client.Lane.GetShape(l).Content;
-                    
-                    LanesX.Add((float)pos.Points.ElementAt(pos.Points.Count - 1).X);
-                    LanesY.Add((float)pos.Points.ElementAt(pos.Points.Count - 1).Y);
-
-                    
-                }
-
-                string states = client.TrafficLight.GetState(id).Content;
-
-                TrafficLights.Add(new LightInfo(id, Lanes, LanesX, LanesY, states));
-
-                
-            }
-            return TrafficLights;
-        }
-
-        /// <summary>
-        /// Получает фазы на перекрёсток в формате строки
-        /// </summary>
-        public List<string> GetTLSPhases()
-        {
-            var TlsIDs = client.TrafficLight.GetIdList().Content;
             List<string> phases = new List<string>();
 
-            foreach(string id in TlsIDs)
+            foreach(var id in LightIds)
             {
                 phases.Add(client.TrafficLight.GetState(id).Content);
             }
