@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using System.Collections.Generic;
 using System.Collections;
 
@@ -29,7 +30,12 @@ public class MainCarController : MonoBehaviour
     [Header("Значение тормозов")]
     public float brakes; // Значение тормозов
 
+    [Header("Имеет полный привод?")]
+    public bool isHaveAWD;// Значение привода
+
     private static int scores = 100;// Очки вождения
+
+    private bool AWDWorking = false;// Отслеживание работы AWD
 
     public void FixedUpdate()
     {
@@ -44,11 +50,22 @@ public class MainCarController : MonoBehaviour
                 axleInfo.rightWheel.steerAngle = steering;
             }
 
-            if (axleInfo.motor)
+            if (axleInfo.motor && !AWDWorking)
             {
                 axleInfo.leftWheel.motorTorque = motor;
                 axleInfo.rightWheel.motorTorque = motor;
             }
+            else if (!axleInfo.motor && AWDWorking)
+            {
+                axleInfo.leftWheel.motorTorque = motor;
+                axleInfo.rightWheel.motorTorque = motor;
+            }
+
+            if(axleInfo.motor && isHaveAWD && (Math.Abs(axleInfo.leftWheel.rotationSpeed) > 500 && Math.Abs(axleInfo.rightWheel.rotationSpeed) > 500) && Math.Abs(speed) < 0.1 && !AWDWorking)
+            {
+                StartCoroutine(AWDWork());
+            }
+
 
             if (Input.GetKey(KeyCode.Space))
             {
@@ -70,6 +87,26 @@ public class MainCarController : MonoBehaviour
     {
         CalculateSpeed();
         DestroyCar();
+    }
+
+    /// <summary>
+    /// Функция работы полного привода
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator AWDWork()
+    {
+        AWDWorking = true;
+        yield return new WaitForSeconds(2.0f);
+
+        foreach(AxleInfo axleInfo in axleInfos)
+        {
+            if(!axleInfo.motor)
+            {
+                axleInfo.leftWheel.motorTorque = 0;
+                axleInfo.rightWheel.motorTorque = 0;
+            }
+        }
+        AWDWorking = false;
     }
 
     /// <summary>
