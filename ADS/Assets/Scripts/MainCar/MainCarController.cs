@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using System.Collections;
+using RootMotion;
 
 [System.Serializable]
 public class AxleInfo
@@ -89,6 +90,14 @@ public class MainCarController : MonoBehaviour
         DestroyCar();
     }
 
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+        isStartCoroutine = false;
+        AWDWorking = false;
+        scores = 100;
+    }
+
     /// <summary>
     /// Функция работы полного привода
     /// </summary>
@@ -163,9 +172,17 @@ public class MainCarController : MonoBehaviour
         {
             Destroy(gameObject);
             MenuScripts.SwitchOnCameraMenu();
-            scores = 100;
             GameObject.FindWithTag("Car Camera").SetActive(false);
         }
+    }
+
+    /// <summary>
+    /// Функция удаления машины, если игрок выходит в меню
+    /// </summary>
+    public static void DestroyCarWithMenu()
+    {
+        MenuScripts.SwitchOnCameraMenu();
+        GameObject.FindWithTag("Car Camera").SetActive(false);
     }
 
     /// <summary>

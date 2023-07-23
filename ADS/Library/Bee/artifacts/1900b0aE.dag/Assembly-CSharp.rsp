@@ -356,6 +356,7 @@
 "Assets/Scripts/For Text/Scores_To_Text.cs"
 "Assets/Scripts/For Text/Speed_To_Text.cs"
 "Assets/Scripts/Info.cs"
+"Assets/Scripts/LeaveToMenu.cs"
 "Assets/Scripts/MainCar/CameraController.cs"
 "Assets/Scripts/MainCar/Lights.cs"
 "Assets/Scripts/MainCar/MainBusSound.cs"

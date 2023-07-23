@@ -22,6 +22,9 @@ public class Scores_To_Text : MonoBehaviour
     private void OnDisable()
     {
         lastScores = 100;// Возвращаем исходное значение lastScores
+        StopAllCoroutines();
+        visualSubScores.GetComponent<Text>().enabled = false;
+        visualSubScores.GetComponent<Animator>().enabled = false;
     }
 
     void Update()

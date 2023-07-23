@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [System.Serializable]
 public class FrontBackLights//  ласс, который хранит в себ€ левую и правую фары каждой пары
@@ -112,6 +113,17 @@ public class Lights : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        isLightsOn = false;
+
+        isMovingBack = false;
+
+        StopAllCoroutines();
+        isStartCoroutine = false;
+        isTurnSignalOn = false;
+        isLeftTurnSignalOn = false;
+    }
     private void OnLights()// ¬ключение и выключение фар
     {
         isLightsOn = !isLightsOn;
