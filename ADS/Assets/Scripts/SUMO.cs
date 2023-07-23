@@ -1,8 +1,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using System.Threading;
-using System.Text;
+using System.Diagnostics;
 using CodingConnected.TraCI.NET;
 using UnityEngine;
 
@@ -15,6 +14,8 @@ namespace Main
         private int port;
         private string host;
         public bool connected;
+        private Process process;
+        private string sumoBinary;
 
         /// <summary>
         /// Конструктор SUMO
@@ -24,24 +25,25 @@ namespace Main
         /// <param name="step_length"></param>
         public SUMO(int port, string SimPath, float step_length = 0.02f, string host = "localhost")
         {
-            string sumoBinary = '\"' + System.Environment.GetEnvironmentVariable("SUMO_HOME") + @"\bin\sumo-gui" + '\"';
-            string FolderPath = @"Assets\SUMO_Networks\";  
+            sumoBinary = '\"' + System.Environment.GetEnvironmentVariable("SUMO_HOME") + @"\bin\sumo-gui" + '\"';
+            //string sumoBinary = '\"' + "D:\\VSTU\\2 курс\\практика\\sumo-1.18.0\\bin\\sumo-gui" + '\"';
+            string FolderPath = @"Assets\SUMO_Networks\";
 
             string map = SimPath.Contains(".sumocfg") ? SimPath : SimPath + ".sumocfg";
             map = map.Replace('/', '\\');
 
-            string[] commands = new string[11] { "/C", sumoBinary, "-G", "-c", FolderPath + map, "--start", "--quit-on-end", "--step-length", step_length.ToString().Replace(',', '.'), "--remote-port", port.ToString() };
+            string[] commands = new string[10] { "/C", sumoBinary, "-c", FolderPath + map, "--start", "--quit-on-end", "--step-length", step_length.ToString().Replace(',', '.'), "--remote-port", port.ToString() };
             string strCmdText = string.Join(' ', commands);
-            Debug.Log(strCmdText);
+            UnityEngine.Debug.Log(strCmdText);
 
-            System.Diagnostics.Process process = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
-            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            process = new Process();
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
             startInfo.FileName = "cmd.exe";
             startInfo.Arguments = strCmdText;
             process.StartInfo = startInfo;
-            process.Start();
-
+            
+            
             this.port = port;
             this.host = host;
             client = new TraCIClient();
@@ -52,8 +54,9 @@ namespace Main
         /// </summary>
         public void StartSimulation(string playerId, List<string> ids)
         {
+            process.Start();
             this.connected = client.Connect(host, port);
-            Debug.Log(connected);
+            UnityEngine.Debug.Log(connected);
 
             while(!connected) client.Connect(host, port);
 
@@ -69,8 +72,23 @@ namespace Main
                 {
                     client.Vehicle.SetSpeed(id, 0);
                 }
-                //1717.212 5066.528
             }
+        }
+
+        public void KillSim()
+        {
+            try
+            {
+                process.Kill();
+                Process[] proc = Process.GetProcessesByName("sumo-gui");
+                proc[0].Kill();
+                connected = false;
+            }
+            catch(Exception e)
+            {
+                UnityEngine.Debug.Log(e);
+            }
+            
         }
 
         /// <summary>
@@ -102,6 +120,7 @@ namespace Main
             obj.transform.position = position;
             obj.transform.rotation = rotation;
             UpdateClientCar(carid, obj.transform);
+            UnityEngine.GameObject.Destroy(obj);
         }
 
         /// <summary>
@@ -138,7 +157,16 @@ namespace Main
         /// </summary>
         public void DoStep()
         {
-            client.Control.SimStep();
+            try
+            {
+                client.Control.SimStep();
+            }
+            catch(Exception e)
+            {
+                KillSim();
+                UnityEngine.Debug.Log(e);
+                Application.Quit();
+            }
         }
 
         /// <summary>
@@ -149,7 +177,7 @@ namespace Main
         {
             List<CarInfo> newcars = new List<CarInfo>();
             var newvehicles = client.Simulation.GetDepartedIDList("0").Content;
-            Debug.Log($"Прибыло: {newvehicles.Count}");
+            UnityEngine.Debug.Log($"Прибыло: {newvehicles.Count}");
 
             foreach (string id in newvehicles)
             {
@@ -166,7 +194,7 @@ namespace Main
         {
             List<CarInfo> leftcars = new List<CarInfo>();
             var vehiclesleft = client.Simulation.GetArrivedIDList("0").Content;
-            Debug.Log($"Убыло: {vehiclesleft.Count}");
+            UnityEngine.Debug.Log($"Убыло: {vehiclesleft.Count}");
 
             foreach (string id in vehiclesleft)
             {
@@ -215,65 +243,23 @@ namespace Main
         }
 
         /// <summary>
-        /// Функция возвращает список информации о светофорах
+        /// Получает фазы на перекрёсток в формате строки для списка светофоров
         /// </summary>
-        public List<LightInfo> GetLigthInfos()
+        public List<string> GetTLSPhases(List<string> LightIds)
         {
-            List<LightInfo> TrafficLights = new List<LightInfo>();
-            var TlsIDs = client.TrafficLight.GetIdList().Content;
-            foreach (var id in TlsIDs)
-            {
-                List<string> Lanes = client.TrafficLight.GetControlledLanes(id).Content;
-                List<float> LanesX = new List<float>();
-                List<float> LanesY = new List<float>();
-
-                foreach(var l in Lanes)
-                {
-                    var pos = client.Lane.GetShape(l).Content;
-                    
-                    LanesX.Add((float)pos.Points.ElementAt(pos.Points.Count - 1).X);
-                    LanesY.Add((float)pos.Points.ElementAt(pos.Points.Count - 1).Y);
-
-                    
-                }
-
-                string states = client.TrafficLight.GetState(id).Content;
-
-                TrafficLights.Add(new LightInfo(id, Lanes, LanesX, LanesY, states));
-
-                
-            }
-            return TrafficLights;
-        }
-
-        /// <summary>
-        /// Получает фазы на перекрёсток в формате строки
-        /// </summary>
-        public List<string> GetTLSPhases()
-        {
-            var TlsIDs = client.TrafficLight.GetIdList().Content;
             List<string> phases = new List<string>();
 
-            foreach(string id in TlsIDs)
+            foreach(var id in LightIds)
             {
                 phases.Add(client.TrafficLight.GetState(id).Content);
             }
             return phases;
-        }
+        }  
 
-        /// <summary>
-        /// Возвращает фазы, скленные в одну строку
-        /// </summary>
-        /// <returns></returns>
-        public string GetTLSPhasesStr()
+        public int[] GetCountLaneToProgramById(string id)
         {
-            var TlsIDs = client.TrafficLight.GetIdList().Content;
-            StringBuilder sb = new StringBuilder();
-            foreach (string id in TlsIDs)
-            {
-                sb.Append(client.TrafficLight.GetState(id).Content);
-            }
-            return sb.ToString();
+            List<string> lanes = client.TrafficLight.GetControlledLanes(id).Content;
+            return lanes.GroupBy(x => x).Select(x => x.Count()).ToArray();
         }
     }
 }

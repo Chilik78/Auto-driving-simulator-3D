@@ -2,7 +2,6 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using System.Collections;
-using RootMotion;
 
 [System.Serializable]
 public class AxleInfo
@@ -172,7 +171,9 @@ public class MainCarController : MonoBehaviour
         {
             Destroy(gameObject);
             MenuScripts.SwitchOnCameraMenu();
-            GameObject.FindWithTag("Car Camera").SetActive(false);
+            var carCam = GameObject.FindWithTag("Car Camera");
+            carCam.GetComponent<LeaveToMenu>().GoToMenu();  
+            carCam.SetActive(false);
         }
     }
 
@@ -209,7 +210,7 @@ public class MainCarController : MonoBehaviour
         switch (indexPenalty)
         {
             case 0: scores -= 30; break;
-            case 1: scores -= 10; break;
+            case 1: scores -= 5; break;
         }
 
         isStartCoroutine = false;

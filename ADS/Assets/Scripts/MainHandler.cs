@@ -2,7 +2,6 @@
 using UnityEngine;
 using System.Linq;
 using Main;
-using System;
 
 
 public class MainHandler : MonoBehaviour
@@ -24,19 +23,19 @@ public class MainHandler : MonoBehaviour
     public GameObject[] SumoObjects;
 
     [Header("Светофор")]
-    public GameObject LightObject;
-    public float createPosY;
+    public int LightCount = 6;
 
     [Header("Одна модель для отладки")]
     public GameObject allVeh;
     public bool isDebug;
 
     private List<GameObject> carsUnity = new List<GameObject>(); //Все машины на карте
-    private List<GameObject> lightsUnity = new List<GameObject>(); //Все светофоры на карте
+    private List<TLSCross> TLSCrosses = new List<TLSCross>(); //Все светофоры на карте
     private GameObject parentCars; //Папка для групировки
-    private GameObject parentLights; //Папка для групировки
 
     private SUMO sumo; //Объект симуляции
+    private List<string> ids;
+
 
     //Если хочется передвинуть машину в симуляции в какую-либо точку
     //И использовать sumo.TeleportSimBodyToStartPosition(id, position, rotation)
@@ -45,37 +44,34 @@ public class MainHandler : MonoBehaviour
     public Quaternion rotation;
 
     //Старт вызывается перед обновлением первого кадра
-    void Start()
+    /*void Start()
     {
         parentCars = new GameObject("Cars");
-        parentLights = new GameObject("Lights");
         sumo = new SUMO(4042, SimPath, SimLength);
-        sumo.StartSimulation(CarId, CarIds);
+        SUMO.StartSimulation(CarId, CarIds);
         if (player == null)
             player = GameObject.Find("player");
 
         sumo.TeleportSimBodyToStartPosition(CarId, position, rotation);
-       // sumo.TeleportPlayerToStartPosition(player, CarId);
+        // sumo.TeleportPlayerToStartPosition(player, CarId);
 
+        ids = getTrafficLightsId(LightCount);
+        foreach (string id in ids)
+        {
+            TLSCross cross = new TLSCross(id);
+            cross.program = sumo.GetCountLaneToProgramById(id);
+            TLSCrosses.Add(cross);
+        }
+        
         Debug.Log("Должно работать.");
-        Debug.Log(CarId);
-        Debug.Log(CarIds.First()); 
-    }
+    }*/
 
     //Обновление вызывается один раз за кадр
     void Update()
     {
-        if (!sumo.connected) return;
+        if (sumo == null || !sumo.connected) return;
 
-        try
-        {
-            sumo.DoStep();
-        }
-        catch (Exception er)
-        {
-            Debug.Log(er);
-            return;
-        }
+        sumo.DoStep();
         
         sumo.UpdateClientCar(CarId, player.transform);
         if (carsUnity.Count > 0) //Если машины есть
@@ -86,11 +82,47 @@ public class MainHandler : MonoBehaviour
         else 
         {
             CreateAllCars(sumo.GetNewCarInfos());
-        }; //Если нет машин, то создаём
+        }//Если нет машин, то создаём
 
-        //Та же логика со светофорами
-        if(lightsUnity.Count > 0) UpdateLights();
-        else CreateAllLights(sumo.GetLigthInfos());
+        UpdateLights();
+    }
+
+    public void StartSim(string playerId)
+    {
+        parentCars = new GameObject("Cars");
+        sumo = new SUMO(4042, SimPath, SimLength);
+        CarId = playerId;
+        sumo.StartSimulation(CarId, CarIds);
+        if (player == null)
+            player = GameObject.FindWithTag("Player");
+
+        sumo.TeleportSimBodyToStartPosition(CarId, position, rotation);
+        // sumo.TeleportPlayerToStartPosition(player, CarId);
+
+        ids = getTrafficLightsId(LightCount);
+        foreach (string id in ids)
+        {
+            TLSCross cross = new TLSCross(id);
+            cross.program = sumo.GetCountLaneToProgramById(id);
+            TLSCrosses.Add(cross);
+        }
+
+        Debug.Log("Должно работать.");
+    }
+
+    public void ReturnToDefault()
+    {
+        sumo.KillSim();
+        sumo = null;
+        Destroy(parentCars);
+   
+        foreach(var car in carsUnity)
+        {
+            Destroy(car);
+        }
+
+        carsUnity.Clear();
+        TLSCrosses.Clear();
     }
 
     /// <summary>
@@ -109,44 +141,19 @@ public class MainHandler : MonoBehaviour
         sumo.TeleportPlayerToStartPosition(player, CarId);
         Debug.Log($"Игрок изменён на {ModelName} - {CarId}");
     }
-
-    /// <summary>
-    /// Функция создаёт светофор по её информации
-    /// </summary>
-    /// <param name="lightInfo"></param>
-    public void CreateLight(LightInfo lightInfo)
-    {
-        for(int i = 0; i < lightInfo.Lanes.Count; i++)
-        {
-            var light = Instantiate(LightObject, new Vector3(lightInfo.PosX[i], createPosY, lightInfo.PosY[i]), LightObject.transform.rotation);
-            light.transform.SetParent(parentLights.transform, false);
-            light.name = lightInfo.Lanes[i];
-            lightsUnity.Add(light);
-        }
-        
-    }
-
-    /// <summary>
-    /// Создаёт все светофоры по списку информации
-    /// </summary>
-    public void CreateAllLights(List<LightInfo> LightsInfo)
-    {
-        foreach (var lightInfo in LightsInfo)
-        {
-            CreateLight(lightInfo);
-        }
-
-        Debug.Log("Все светофороы созданы");
-    }
-
+    
     /// <summary>
     /// Функция создаёт все машины по списку информации
     /// </summary>
     public void CreateAllCars(List<CarInfo> CarsInfo)
     {
+
+        if (CarsInfo.Count == 0) return;
+
         foreach (var carInfo in CarsInfo)
         {
-            if (CarIds.Count(x => x == carInfo.vehid) > 0) continue;
+            //Debug.LogWarning($"Car Info veh{carInfo.vehid}");
+            if (carInfo == null || CarIds.Count(x => x == carInfo.vehid) > 0) continue;
             CreateCar(carInfo);
         }
 
@@ -213,8 +220,10 @@ public class MainHandler : MonoBehaviour
         for (int i = 0; i < carsUnity.Count; i++)
         {
             var car = carsUnity[i];
-            CarInfo carInfo = CarsInfo.Where(x => x.vehid == car.name).First();
-
+            if (CarsInfo.Count < 1) return;
+            var  listc = CarsInfo.Where(x => x.vehid == car.name).ToList();
+            if (listc.Count < 1) continue;
+            CarInfo carInfo = listc.First();
             if (carInfo is null) continue;
  
             Vector3 tempPos = car.transform.position;               //Получаем текущую позицию
@@ -231,55 +240,40 @@ public class MainHandler : MonoBehaviour
                 comp.CalculateSteering(carInfo.heading, carInfo.speed);
                 comp.BrakeLightSwitch(carInfo.brakestate);
             }
-
-
         }
         Debug.Log("Обновлены все позиции машин");
     }
 
     /// <summary>
-    /// Обновляет состояния всех светофоров по списку информации
+    /// Функция вовзращает id каждого светофора в игре
     /// </summary>
-    /// <param name="LightsInfo"></param>
+    /// <returns></returns>
+    private List<string> getTrafficLightsId(int tlsCount)
+    {
+        List<string> ids = new List<string>();
+        for (int i = 1; i <= tlsCount; i++)
+        {
+            GameObject obj = GameObject.Find($"TLC_{i}");
+            if (obj == null) continue;
+            ids.Add(obj.name);
+        }
+        return ids;
+    }
+
+    /// <summary>
+    /// Обновляет состояния всех светофоров с помощью состояний
+    /// </summary>
     public void UpdateLights()
     {
-        string phases = sumo.GetTLSPhasesStr();
-
-        for(int i = 0; i < lightsUnity.Count; i++)
-        {
-            var light = lightsUnity[i];
-
-            ChangeColorLight(light, phases[i]);
-        }
+        List<string> phases = sumo.GetTLSPhases(ids);
+        for (int i = 0; i < phases.Count; i++) TLSCrosses[i].UpdateCrossState(phases[i]);
         Debug.Log("Обновлены все состояния светофоров");
     }
     
-    /// <summary>
-    /// Меняет светофора по фазе
-    /// </summary>
-    /// <param name="light"></param>
-    /// <param name="phase"></param>
-    public void ChangeColorLight(GameObject light, char phase)
-    {
-        var lightRenderer = light.GetComponent<Renderer>();
-        Color color = Color.white;
-        int code = 0;
+    
 
-        switch (char.ToLower(phase))
-        {
-            case 'g': code = 1; break;
-            case 'y': code = 2; break;
-            case 'r': code = 3; break;
-        }
+   
 
-        switch(code)
-        {
-            case 1: color = Color.green; break;
-            case 2: color = Color.yellow; break;
-            case 3: color = Color.red; break;
-        }
-
-        lightRenderer.material.SetColor("_Color", color);
-    }
+    
 }
 

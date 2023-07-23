@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LeaveToMenu : MonoBehaviour
@@ -10,8 +8,15 @@ public class LeaveToMenu : MonoBehaviour
     {
         if(Input.GetKeyDown(leaveKey))
         {
-            MainCarController.DestroyCarWithMenu();
-            Destroy(GameObject.FindWithTag("Player"));
+            GoToMenu();
         }
+    }
+
+    public void GoToMenu()
+    {
+        MainCarController.DestroyCarWithMenu();
+        Destroy(GameObject.FindWithTag("Player"));
+        var MH = GameObject.Find("MyScripts").GetComponent<MainHandler>();
+        MH.ReturnToDefault();
     }
 }

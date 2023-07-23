@@ -29,12 +29,16 @@ public class MenuScripts : MonoBehaviour
     /// </summary>
     public void CreateCar()
     {
+        string car = "";
+
         switch (variableTransport.value)// Спавним транспорт относительно выпадающего списка
         {
-            case 0: transformCar = Instantiate(firstTransport, new Vector3(posX, posY, posZ), new Quaternion(0,0,0,0)).transform; break;
-            case 1: transformCar = Instantiate(secondTransport, new Vector3(posX, posY, posZ), new Quaternion(0, 0, 0, 0)).transform; break;
-            case 2: transformCar = Instantiate(thirdTransport, new Vector3(posX, posY, posZ), new Quaternion(0, 0, 0, 0)).transform; break;
+            case 0: transformCar = Instantiate(firstTransport, new Vector3(posX, posY, posZ), new Quaternion(0,0,0,0)).transform; transformCar.name = "Player"; car = "veh0";  break;
+            case 1: transformCar = Instantiate(secondTransport, new Vector3(posX, posY, posZ), new Quaternion(0, 0, 0, 0)).transform; transformCar.name = "Player"; car = "bus0"; break;
+            case 2: transformCar = Instantiate(thirdTransport, new Vector3(posX, posY, posZ), new Quaternion(0, 0, 0, 0)).transform; transformCar.name = "Player"; car = "truck0"; break;
         }
+        var MH = GameObject.Find("MyScripts").GetComponent<MainHandler>();
+        MH.StartSim(car);
 
         camCar.SetActive(true);// Включаем камеру машины
         camMenu.SetActive(false);// Выключаем камеру меню

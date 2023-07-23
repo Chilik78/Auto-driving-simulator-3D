@@ -367,6 +367,7 @@
 "Assets/Scripts/MainCar/Зил/FlashingLights.cs"
 "Assets/Scripts/MainHandler.cs"
 "Assets/Scripts/Menu Scripts.cs"
+"Assets/Scripts/OnOffLights.cs"
 "Assets/Scripts/SUMO.cs"
 "Assets/Scripts/VehicleHandler.cs"
 "Assets/Scripts/WheelDrive.cs"
