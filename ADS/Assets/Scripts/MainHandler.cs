@@ -10,6 +10,7 @@ public class MainHandler : MonoBehaviour
     public GameObject MyScripts;
 
     [Header("Настройки симуляции")]
+    public string SumoPath;
     public string SimPath;
     public float SimLength;
 
@@ -28,6 +29,7 @@ public class MainHandler : MonoBehaviour
     [Header("Одна модель для отладки")]
     public GameObject allVeh;
     public bool isDebug;
+
 
     private List<GameObject> carsUnity = new List<GameObject>(); //Все машины на карте
     private List<TLSCross> TLSCrosses = new List<TLSCross>(); //Все светофоры на карте
@@ -90,7 +92,7 @@ public class MainHandler : MonoBehaviour
     public void StartSim(string playerId)
     {
         parentCars = new GameObject("Cars");
-        sumo = new SUMO(4042, SimPath, SimLength);
+        sumo = new SUMO(4042, SimPath, SumoPath, SimLength);
         CarId = playerId;
         sumo.StartSimulation(CarId, CarIds);
         if (player == null)

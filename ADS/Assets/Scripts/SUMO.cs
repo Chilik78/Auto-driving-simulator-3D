@@ -23,11 +23,11 @@ namespace Main
         /// <param name="port"></param>
         /// <param name="host"></param>
         /// <param name="step_length"></param>
-        public SUMO(int port, string SimPath, float step_length = 0.02f, string host = "localhost")
+        public SUMO(int port, string SimPath, string SumoPath, float step_length = 0.02f, string host = "localhost")
         {
-            sumoBinary = '\"' + System.Environment.GetEnvironmentVariable("SUMO_HOME") + @"\bin\sumo-gui" + '\"';
-            //string sumoBinary = '\"' + "D:\\VSTU\\2 курс\\практика\\sumo-1.18.0\\bin\\sumo-gui" + '\"';
             string FolderPath = @"Assets\SUMO_Networks\";
+            string pather = SumoPath == " " || SumoPath == null || SumoPath == string.Empty ? System.Environment.GetEnvironmentVariable("SUMO_HOME") : SumoPath;
+            sumoBinary = '\"' + pather.Replace('/', '\\') + @"\bin\sumo-gui" + '\"';
 
             string map = SimPath.Contains(".sumocfg") ? SimPath : SimPath + ".sumocfg";
             map = map.Replace('/', '\\');
