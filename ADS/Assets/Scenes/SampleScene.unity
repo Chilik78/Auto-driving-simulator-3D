@@ -1954,8 +1954,8 @@ MonoBehaviour:
   MyScripts: {fileID: 1765248690}
   SumoPath: B:\sumo-1.18.0
   SimPath: dzer_sumo/osm
-  SimLength: 0.02
-  MaxNumVeh: 35
+  SimLength: 0.01
+  MaxNumVeh: 100
   player: {fileID: 0}
   CarId: veh0
   CarIds:
@@ -8335,7 +8335,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 35, y: 30}
+  m_AnchoredPosition: {x: 35, y: 210}
   m_SizeDelta: {x: 250, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!64 &940191069534830737
@@ -14031,7 +14031,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 1, y: 105}
+  m_AnchoredPosition: {x: 1, y: 290}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &2043117410753903672
@@ -18339,12 +18339,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1951193754856123974}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2090, y: 5.79, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -387.76285}
+  m_LocalScale: {x: 3.8776286, y: 3.8776286, z: 3.8776286}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 8988288873247518669}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &2786375291574395946
 Transform:
@@ -54913,6 +54913,7 @@ RectTransform:
   - {fileID: 4525297707965874821}
   - {fileID: 2042822632233424884}
   - {fileID: 920852974657049186}
+  - {fileID: 2784580776526551359}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -56502,5 +56503,4 @@ SceneRoots:
   - {fileID: 1632591213899729498}
   - {fileID: 1065786239}
   - {fileID: 8988288873247518669}
-  - {fileID: 2784580776526551359}
   - {fileID: 356502804}

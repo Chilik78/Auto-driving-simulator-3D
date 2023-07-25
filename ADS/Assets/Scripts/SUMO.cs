@@ -44,7 +44,6 @@ namespace Main
             startInfo.Arguments = strCmdText;
             process.StartInfo = startInfo;
             
-            
             this.port = port;
             this.host = host;
             client = new TraCIClient();
@@ -117,7 +116,11 @@ namespace Main
         /// <param name="carid"></param>
         public void TeleportSimBodyToStartPosition(string carid, Vector3 position, Quaternion rotation)
         {
-            UpdateClientCar(carid, position.x, position.z, rotation.eulerAngles.y);
+            GameObject obj = new GameObject();
+            obj.transform.position = position;
+            obj.transform.rotation = rotation;
+            UpdateClientCar(carid, obj.transform);
+            UnityEngine.GameObject.Destroy(obj);
         }
 
         /// <summary>
@@ -137,14 +140,14 @@ namespace Main
         /// ќбновление данных в симул€ции по движению модели в игре
         /// </summary>
 
-        public void UpdateClientCar(string id, double x, double z, double y)
+        public void UpdateClientCar(string id, Transform carTransform)
         {
             var road = client.Vehicle.GetRoadID(id).Content;
             var lane = client.Vehicle.GetLaneIndex(id).Content;
             client.Vehicle.MoveToXY(id, road, lane,
-                x,
-                z,
-                y,
+                (double)carTransform.position.x,
+                (double)carTransform.transform.position.z,
+                (double)carTransform.transform.eulerAngles.y,
                  2);
         }
 
@@ -216,8 +219,7 @@ namespace Main
             List<CarInfo> cars = new List<CarInfo>();
             foreach (string id in client.Vehicle.GetIdList().Content)
             {
-                CarInfo car = withIdGetCarInfo(id);
-                if(car != null) cars.Add(car);
+                cars.Add(withIdGetCarInfo(id));
             }
             return cars;
         }

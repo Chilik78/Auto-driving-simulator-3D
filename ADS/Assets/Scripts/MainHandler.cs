@@ -81,7 +81,7 @@ public class MainHandler : MonoCache
         double x = transform.position.x;
         double z = transform.position.z;
         double y = transform.rotation.eulerAngles.y;
-        sumo.UpdateClientCar(CarId, x, z, y);
+        sumo.UpdateClientCar(CarId, player.transform);
         if (carsUnity.Count > 0) //Если машины есть
         {
             UpdateAllCars(); //Обновляем список машин (удаляем вышедшее, добавляем новые)
@@ -104,7 +104,7 @@ public class MainHandler : MonoCache
         if (player == null)
             player = GameObject.FindWithTag("Player");
 
-        sumo.TeleportSimBodyToStartPosition(CarId, position, rotation);
+        //sumo.TeleportSimBodyToStartPosition(CarId, position, rotation);
         // sumo.TeleportPlayerToStartPosition(player, CarId);
 
         ids = getTrafficLightsId(LightCount);
@@ -232,8 +232,8 @@ public class MainHandler : MonoCache
         for (int i = 0; i < carsUnity.Count; i++)
         {
             GameObject car = carsUnity[i];
-            var carInfo = CarsInfo.Where(x => x.vehid == car.name).FirstOrDefault();
- 
+            var carInfo = CarsInfo.Where(x => x.vehid == car.name).First();
+            if (carInfo == null) continue;
             Vector3 tempPos = car.transform.position;               //Получаем текущую позицию
             tempPos.x = carInfo.PosX; 
             tempPos.z = carInfo.PosY;
