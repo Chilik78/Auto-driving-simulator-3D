@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Linq;
 using Main;
-
+using System.Collections;
 
 public class MainHandler : MonoBehaviour
 {
@@ -68,24 +68,62 @@ public class MainHandler : MonoBehaviour
         Debug.Log("Должно работать.");
     }*/
 
+    private bool isStartCoroutine = false;
     //Обновление вызывается один раз за кадр
     void Update()
     {
-        if (sumo == null || !sumo.connected) return;
-
-        sumo.DoStep();
+        if (sumo == null || !sumo.connected)
+        {
+            StopCoroutine(Check());
+            return;
+        }
+        else if (!isStartCoroutine)
+        StartCoroutine(Check());
         
+    }
+
+    IEnumerator Check()
+    {
+        isStartCoroutine =true; 
+        yield return new WaitForSeconds(0.1f);
+        sumo.DoStep();
+
         sumo.UpdateClientCar(CarId, player.transform);
         if (carsUnity.Count > 0) //Если машины есть
         {
-            UpdateAllCars(); //Обновляем список машин (удаляем вышедшее, добавляем новые)
-            UpdateAllCarsPositions(); //Обновляем позиции машин
-        } 
-        else 
+            StartCoroutine(UpdAllCars());
+        }
+        else
         {
             CreateAllCars(sumo.GetNewCarInfos());
         }//Если нет машин, то создаём
 
+        StartCoroutine(UpdAllLights());
+        isStartCoroutine = false;
+    }
+
+    IEnumerator UpdAllCars()
+    {
+        StartCoroutine(UpdCrsPos());
+        yield return null;
+        StartCoroutine(ClearCars());
+    }
+
+    IEnumerator UpdCrsPos()
+    {
+        yield return null;
+        UpdateAllCarsPositions(); //Обновляем позиции машин
+    }
+
+    IEnumerator ClearCars()
+    {
+        UpdateAllCars(); //Обновляем список машин (удаляем вышедшее, добавляем новые)
+        yield return null;  
+    }
+
+    IEnumerator UpdAllLights()
+    {
+        yield return null;
         UpdateLights();
     }
 
