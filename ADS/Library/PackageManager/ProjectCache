@@ -6,7 +6,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638257300097170360
+      ticks: 638265687010006775
     m_Hash: 2362511596
   m_LockFileStatus:
     m_FilePath: "C:/Users/dchel/OneDrive/\u0420\u0430\u0431\u043E\u0447\u0438\u0439
@@ -15,7 +15,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638257300097170360
+      ticks: 638265687010006775
     m_Hash: 1613653515
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -112,15 +112,17 @@ m_ResolvedPackages:
     - 2.0.3
     - 2.0.4
     - 2.0.5
+    - 2.0.7
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
     compatible:
     - 2.0.5
+    - 2.0.7
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
-    recommended: 2.0.5
+    recommended: 2.0.7
     deprecated: []
   dependencies: []
   resolvedDependencies: []
@@ -2747,9 +2749,11 @@ m_ResolvedPackages:
     - 2.0.16
     - 2.0.17
     - 2.0.18
+    - 2.0.20
     compatible:
     - 2.0.18
-    recommended: 2.0.18
+    - 2.0.20
+    recommended: 2.0.20
     deprecated: []
   dependencies:
   - name: com.unity.test-framework
