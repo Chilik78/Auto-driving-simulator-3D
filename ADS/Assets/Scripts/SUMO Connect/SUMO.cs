@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using CodingConnected.TraCI.NET;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Main
 {
@@ -23,7 +24,7 @@ namespace Main
         /// <param name="port"></param>
         /// <param name="host"></param>
         /// <param name="step_length"></param>
-        public SUMO(int port, string SimPath, string SumoPath, float step_length = 0.02f, string host = "localhost")
+        public SUMO(int port, string SimPath, string SumoPath, int MaxNumVeh, float step_length = 0.02f, string host = "localhost")
         {
             string FolderPath = @"Assets\SUMO_Networks\";
             string pather = SumoPath == " " || SumoPath == null || SumoPath == string.Empty ? System.Environment.GetEnvironmentVariable("SUMO_HOME") : SumoPath;
@@ -32,7 +33,7 @@ namespace Main
             string map = SimPath.Contains(".sumocfg") ? SimPath : SimPath + ".sumocfg";
             map = map.Replace('/', '\\');
 
-            string[] commands = new string[10] { "/C", sumoBinary, "-c", FolderPath + map, "--start", "--quit-on-end", "--step-length", step_length.ToString().Replace(',', '.'), "--remote-port", port.ToString() };
+            string[] commands = new string[12] { "/C", sumoBinary, "-c", FolderPath + map, "--start", "--quit-on-end", "--max-num-vehicles", MaxNumVeh.ToString(), "--step-length", step_length.ToString().Replace(',', '.'), "--remote-port", port.ToString() };
             string strCmdText = string.Join(' ', commands);
             UnityEngine.Debug.Log(strCmdText);
 
@@ -42,7 +43,6 @@ namespace Main
             startInfo.FileName = "cmd.exe";
             startInfo.Arguments = strCmdText;
             process.StartInfo = startInfo;
-            
             
             this.port = port;
             this.host = host;
@@ -139,15 +139,14 @@ namespace Main
         /// <summary>
         /// ќбновление данных в симул€ции по движению модели в игре
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="carTransform"></param>
+
         public void UpdateClientCar(string id, Transform carTransform)
         {
             var road = client.Vehicle.GetRoadID(id).Content;
             var lane = client.Vehicle.GetLaneIndex(id).Content;
-            client.Vehicle.MoveToXY(id, road, lane, 
+            client.Vehicle.MoveToXY(id, road, lane,
                 (double)carTransform.position.x,
-                (double)carTransform.transform.position.z, 
+                (double)carTransform.transform.position.z,
                 (double)carTransform.transform.eulerAngles.y,
                  2);
         }

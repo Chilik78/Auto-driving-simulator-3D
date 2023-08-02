@@ -13,6 +13,7 @@ public class MainHandler : MonoBehaviour
     public string SumoPath;
     public string SimPath;
     public float SimLength;
+    public int MaxNumVeh = 50;
 
     [Header("Настройка игрока")]
     public GameObject player;
@@ -130,7 +131,7 @@ public class MainHandler : MonoBehaviour
     public void StartSim(string playerId)
     {
         parentCars = new GameObject("Cars");
-        sumo = new SUMO(4042, SimPath, SumoPath, SimLength);
+        sumo = new SUMO(4042, SimPath, SumoPath, MaxNumVeh, SimLength);
         CarId = playerId;
         sumo.StartSimulation(CarId, CarIds);
         if (player == null)
