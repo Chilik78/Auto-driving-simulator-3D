@@ -1849,7 +1849,7 @@ MonoBehaviour:
   MyScripts: {fileID: 1765248690}
   SumoPath: 
   SimPath: dzer_sumo/osm
-  SimLength: 0.1
+  SimLength: 0.02
   MaxNumVeh: 160
   player: {fileID: 0}
   CarId: veh0
