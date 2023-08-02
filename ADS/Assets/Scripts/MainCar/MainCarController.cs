@@ -1,0 +1,236 @@
+using UnityEngine;
+using System;
+using System.Collections.Generic;
+using System.Collections;
+
+[System.Serializable]
+public class AxleInfo
+{
+    [Header("Левое колесо")]
+    public WheelCollider leftWheel;
+    [Header("Правое колесо")]
+    public WheelCollider rightWheel;
+    [Header("Мотор?")]
+    public bool motor;
+    [Header("Поворачиваются?")]
+    public bool steering;
+}
+
+public class MainCarController : MonoBehaviour
+{
+    [Header("Оси колес")]
+    public List<AxleInfo> axleInfos; // Оси колес
+
+    [Header("Максимальный крутящий момент двигателя")]
+    public float maxMotorTorque; // Максимальный крутящий момент двигателя
+
+    [Header("Максимальный угол поворота колес")]
+    public float maxSteeringAngle; // Максимальный угол поворота колес
+
+    [Header("Значение тормозов")]
+    public float brakes; // Значение тормозов
+
+    [Header("Имеет полный привод?")]
+    public bool isHaveAWD;// Значение привода
+
+    private static int scores = 100;// Очки вождения
+
+    private bool AWDWorking = false;// Отслеживание работы AWD
+
+    public void FixedUpdate()
+    {
+        float motor = maxMotorTorque * Input.GetAxis("Vertical");
+        float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+
+        foreach (AxleInfo axleInfo in axleInfos)
+        {
+            if (axleInfo.steering)
+            {
+                axleInfo.leftWheel.steerAngle = steering;
+                axleInfo.rightWheel.steerAngle = steering;
+            }
+
+            if (axleInfo.motor && !AWDWorking)
+            {
+                axleInfo.leftWheel.motorTorque = motor;
+                axleInfo.rightWheel.motorTorque = motor;
+            }
+            else if (!axleInfo.motor && AWDWorking)
+            {
+                axleInfo.leftWheel.motorTorque = motor;
+                axleInfo.rightWheel.motorTorque = motor;
+            }
+
+            if(axleInfo.motor && isHaveAWD && (Math.Abs(axleInfo.leftWheel.rotationSpeed) > 500 && Math.Abs(axleInfo.rightWheel.rotationSpeed) > 500) && Math.Abs(speed) < 0.1 && !AWDWorking)
+            {
+                StartCoroutine(AWDWork());
+            }
+
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                axleInfo.leftWheel.brakeTorque = brakes;
+                axleInfo.rightWheel.brakeTorque = brakes;
+            }
+            else
+            {
+                axleInfo.leftWheel.brakeTorque = 0;
+                axleInfo.rightWheel.brakeTorque = 0;
+            }
+
+            ApplyLocalPositionToVisuals(axleInfo.leftWheel);
+            ApplyLocalPositionToVisuals(axleInfo.rightWheel);
+        }
+    }
+
+    private void Update()
+    {
+        CalculateSpeed();
+        DestroyCar();
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+        isStartCoroutine = false;
+        AWDWorking = false;
+        scores = 100;
+    }
+
+    /// <summary>
+    /// Функция работы полного привода
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator AWDWork()
+    {
+        AWDWorking = true;
+        yield return new WaitForSeconds(2.0f);
+
+        foreach(AxleInfo axleInfo in axleInfos)
+        {
+            if(!axleInfo.motor)
+            {
+                axleInfo.leftWheel.motorTorque = 0;
+                axleInfo.rightWheel.motorTorque = 0;
+            }
+        }
+        AWDWorking = false;
+    }
+
+    /// <summary>
+    /// Функция находит визуальную часть колес и устанавливает новые координаты
+    /// </summary>
+    /// <param name="collider"></param>
+    private static void ApplyLocalPositionToVisuals(WheelCollider collider)
+    {
+        if (collider.transform.childCount == 0)
+        {
+            return;
+        }
+
+        Transform visualWheel = collider.transform.GetChild(0);
+
+        Vector3 position;
+        Quaternion rotation;
+        collider.GetWorldPose(out position, out rotation);
+
+        visualWheel.transform.position = position;
+        visualWheel.transform.position = position;
+        visualWheel.transform.rotation = rotation;
+    }
+
+    private static float speed;// Скорость машины
+    private bool isPositive;// Отслеживание направления скорости относительно машины
+
+    /// <summary>
+    /// Функция расчета скорости машины
+    /// </summary>
+    private void CalculateSpeed()
+    {
+        speed = gameObject.GetComponent<Rigidbody>().velocity.magnitude;
+
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && speed <= 0.2)
+        {
+            isPositive = true;
+        }
+        else if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && speed <= 0.2)
+        {
+            isPositive = false;
+        }
+
+        speed = isPositive ? speed : speed * -1;
+        speed *= 3.6f;
+    }
+
+    /// <summary>
+    /// Функция удаления машины, если очки вождения <= 0
+    /// </summary>
+    private void DestroyCar()
+    {
+        if(scores <= 0)
+        {
+            Destroy(gameObject);
+            MenuScripts.SwitchOnCameraMenu();
+            var carCam = GameObject.FindWithTag("Car Camera");
+            carCam.GetComponent<LeaveToMenu>().GoToMenu();  
+            carCam.SetActive(false);
+        }
+    }
+
+    /// <summary>
+    /// Функция удаления машины, если игрок выходит в меню
+    /// </summary>
+    public static void DestroyCarWithMenu()
+    {
+        MenuScripts.SwitchOnCameraMenu();
+        GameObject.FindWithTag("Car Camera").SetActive(false);
+    }
+
+    /// <summary>
+    /// Функция получения скорости автомобиля
+    /// </summary>
+    /// <returns></returns>
+    public static float GetSpeed()
+    {
+        return speed;
+    }
+
+    private static bool isStartCoroutine = false;
+    /// <summary>
+    /// Функция вычета очков в зависимости от индекса нарушения
+    /// </summary>
+    /// <param name="indexPenalty"></param>
+    /// <returns></returns>
+    public static IEnumerator SubtractionScores(int indexPenalty)
+    {
+        isStartCoroutine = true;
+
+        yield return new WaitForSeconds(0.5f);
+
+        switch (indexPenalty)
+        {
+            case 0: scores -= 30; break;
+            case 1: scores -= 5; break;
+        }
+
+        isStartCoroutine = false;
+    }
+
+    /// <summary>
+    /// Функция получения состояния карутина
+    /// </summary>
+    /// <returns></returns>
+    public static bool GetStateCoroutine()
+    {
+        return isStartCoroutine;
+    }
+
+    /// <summary>
+    /// Функция получения очков вождения
+    /// </summary>
+    /// <returns></returns>
+    public static int GetScores()
+    {
+        return scores;
+    }
+}
